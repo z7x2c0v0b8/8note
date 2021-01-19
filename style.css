@@ -1,2 +1,192 @@
-h1 {
-  color: #000; }
+@font-face {
+  font-family: 'MADECanvas';
+  src: url("fonts/MADECanvas-Black.eot");
+  src: url("fonts/MADECanvas-Black?#iefix") format("embedded-opentype"), url("fonts/MADECanvas-Black.woff2") format("woff2"), url("fonts/MADECanvas-Black.woff") format("woff"), url("fonts/MADECanvas-Black.ttf") format("truetype"), url("fonts/MADECanvas-Black.svg#svgFontName") format("svg");
+  font-display: swap; }
+
+body {
+  font-family: 'DM Serif Display', serif; }
+  body h1 {
+    color: #c3c3c3; }
+  body section {
+    padding: 80px 0;
+    width: 100%; }
+
+.block_title {
+  position: absolute; }
+  .block_title .wrap_outline {
+    position: relative; }
+    .block_title .wrap_outline h1 {
+      font-size: 180px;
+      font-family: MADECanvas;
+      color: #232323;
+      margin-bottom: 0;
+      opacity: 0; }
+    .block_title .wrap_outline .en_wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 0;
+      height: 100%;
+      background: #000;
+      -webkit-transition-duration: .2s;
+      -o-transition-duration: .2s;
+      transition-duration: .2s; }
+  .block_title h2 {
+    position: absolute;
+    font-size: 150px;
+    font-weight: 800;
+    margin-bottom: 0;
+    width: 300px;
+    top: 130px;
+    left: 240px;
+    line-height: 1;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #232323; }
+  .block_title.center {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center; }
+    .block_title.center h2 {
+      top: -60px;
+      left: 0;
+      right: 0;
+      margin: 0 auto; }
+
+#index #landing {
+  margin-bottom: 30vh; }
+  #index #landing #landing_img .carousel-control-prev {
+    z-index: 99; }
+  #index #landing #landing_img .carousel-indicators {
+    margin-left: 50px;
+    right: auto; }
+  #index #landing #landing_img .carousel-item {
+    height: 100vh;
+    background-size: cover; }
+    #index #landing #landing_img .carousel-item .landing_bg, #index #landing #landing_img .carousel-item .landing_main {
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: 0 25%; }
+    #index #landing #landing_img .carousel-item .landing_main {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 9 !important; }
+  #index #landing .landing_left {
+    background: #f0f0f0;
+    margin-left: 15vw;
+    margin-top: 40vh;
+    padding: 95px 0 0 250px;
+    width: calc(100% - 13vw + 31px);
+    height: 60vh;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+    transition-duration: .5s; }
+    #index #landing .landing_left h1 {
+      font-size: 50px;
+      font-family: MADECanvas;
+      color: #000;
+      position: relative;
+      z-index: 99; }
+      #index #landing .landing_left h1.mix_blend {
+        color: #fff;
+        position: relative;
+        mix-blend-mode: difference; }
+    #index #landing .landing_left p {
+      position: relative;
+      z-index: 9; }
+  #index #landing .landing_right {
+    position: relative;
+    background: #c3c3c3;
+    height: 100vh; }
+    #index #landing .landing_right .big_text {
+      position: absolute;
+      color: #c3ba8a;
+      font-size: 350px;
+      font-family: MADECanvas;
+      line-height: .7;
+      -webkit-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s; }
+      #index #landing .landing_right .big_text.t1 {
+        top: -35px !important;
+        left: 50px !important; }
+      #index #landing .landing_right .big_text.t2 {
+        top: calc(40vh - 60px) !important;
+        left: -22vw !important; }
+      #index #landing .landing_right .big_text.t3 {
+        top: 40vh !important;
+        right: -20px !important;
+        left: auto !important; }
+      #index #landing .landing_right .big_text.t4 {
+        top: 80vh !important;
+        right: 22vw !important;
+        z-index: 9; }
+      #index #landing .landing_right .big_text.t5 {
+        top: 120vh !important;
+        right: 44vw !important;
+        z-index: 9; }
+  #index #landing .landing_info {
+    background: #f0f0f0;
+    margin-left: 15vw;
+    padding: 80px 40px 40px;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+    transition-duration: .5s; }
+    #index #landing .landing_info p {
+      margin: 0; }
+
+#about {
+  position: relative;
+  margin-top: 400px;
+  min-height: 550px;
+  background: -webkit-gradient(linear, left top, right top, from(white), color-stop(30%, white), color-stop(30%, #f0f0f0));
+  background: -webkit-linear-gradient(left, white 0%, white 30%, #f0f0f0 30%);
+  background: -o-linear-gradient(left, white 0%, white 30%, #f0f0f0 30%);
+  background: linear-gradient(90deg, white 0%, white 30%, #f0f0f0 30%); }
+  #about h5 {
+    margin-bottom: 50px; }
+  #about .about_info {
+    margin-bottom: 30px; }
+  #about p {
+    padding-right: 300px; }
+  #about .block_title {
+    top: -150px; }
+
+#project {
+  padding-bottom: 0;
+  background: -webkit-gradient(linear, left top, right top, from(white), color-stop(30%, white), color-stop(30%, #f0f0f0));
+  background: -webkit-linear-gradient(left, white 0%, white 30%, #f0f0f0 30%);
+  background: -o-linear-gradient(left, white 0%, white 30%, #f0f0f0 30%);
+  background: linear-gradient(90deg, white 0%, white 30%, #f0f0f0 30%);
+  min-height: 500px; }
+  #project .block_title {
+    position: relative; }
+  #project h2 {
+    top: -50px;
+    left: 400px; }
+  #project .project_card {
+    text-align: right;
+    min-height: 250px;
+    margin-bottom: 10px; }
+    #project .project_card .item {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end; }
+      #project .project_card .item .col-sm-6 {
+        background: #c3c3c3; }
+      #project .project_card .item .col-sm-4 {
+        background: gray; }
+      #project .project_card .item.right {
+        text-align: left; }

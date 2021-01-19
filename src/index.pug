@@ -1,8 +1,175 @@
 extends layout
 
 block body_content
+	.page#index
+		#landing
+			.container-fuild
+				.row
+					.col-5
+						.landing_left
+							p since 2018
+							h1.mix_blend.m-0
+								| 8Note
+							h1.mix_blend.m-0
+								| Portfolio
+								br
+								| Collection
+					.col-7
+						.landing_right#js-scene
+							#landing_img.carousel.slide.carousel-fade(data-ride="carousel")
+								ol.carousel-indicators
+									li(data-target="#landing_img, #landing_bckground" data-slide-to="0" class="active")
+									li(data-target="#landing_img, #landing_bckground" data-slide-to="1")
+									li(data-target="#landing_img, #landing_bckground" data-slide-to="2")
+								.carousel-inner
+									#first.carousel-item.active
+										.landing_bg(style="background-image: url('/images/landing_1_bg.png')")
+										.big_text.t1 8
+										.big_text.t3 O
+										.landing_main(data-depth="0.1")(style="background-image: url('/images/landing_1_main.png')")
+									#second.carousel-item
+										.landing_bg(style="background-image: url('/images/landing_2_bg.png')")
+										.big_text.t1 8
+										.big_text.t3 O
+										.landing_main(data-depth="0.1")(style="background-image: url('/images/landing_2_main.png')")
+									#third.carousel-item
+										.landing_bg(style="background-image: url('/images/landing_3_bg.png')")
+										.big_text.t1 8
+										.big_text.t3 O
+										.landing_main(data-depth="0.1")(style="background-image: url('/images/landing_3_main.png')")
+								//-
+									a.carousel-control-prev(href="[id^=myCarousel]" role="button" data-slide="prev")
+										span.carousel-control-prev-icon(aria-hidden="true")
+										span.sr-only Previous
+									a.carousel-control-next(href="[id^=myCarousel]" role="button" data-slide="next")
+										span.carousel-control-next-icon(aria-hidden="true")
+										span.sr-only next
+							.big_text.t2(data-depth="0.2") N
+							.big_text.t4(data-depth="0.2") T
+							.big_text.t5(data-depth="0.2") E
+				.row
+					.col-8
+						.landing_info
+							a(href="")
+								p Artstation
+							a(href="")
+								p Instergram
+							a(href="")
+								p Plurk
+							a(href="")
+								p z7x2c0v0b8@gmail.com
+		section#about
+			.container-fuild
+				.block_title
+					.wrap_outline
+						h1 About
+						.en_wrap
+					h2 關於
+				.row.justify-content-end
+					.col-sm-7
+						h5 8Note 八音諧
+						.about_info
+							a(href="") Artstation
+							span /
+							a(href="") Instergram
+							span /
+							a(href="") Plurk
+							span /
+							a(href="") E-mail
+						p
+							| 支能不情因許不們，中會快打中司公早發時管蘭連變小早聽沒體一務我絕；師臺力大年分。量的可，看事係去候手報望的斯飛式小見的公其展及生生後朋訴研示……夫意
+							br
+							| * 支能不情因許不們，中會快
+							br
+							| * 聽沒體一務我絕；師臺力大年分。量的可
+							br
+							| * 見的公其展及生生後朋訴研示……夫意為
+						.about_link about Edith Hsu
+		section#project
+			.container-fuild
+				.block_title
+					h1 Project
+					h2 專案
+			.row.project_card
+				.col-sm-7.item(style="background: #c3c3c3")
+					h3 DnD Caracter Collection
+					h5 龍與地下城 冒險者收集計劃
+				.col-sm-3.item(style="background: gray")
+					h3 Other
+					h5 其他
+			.row.justify-content-end.project_card.right
+				.col-sm-4.item(style="background: #c3c3c3")
+					h3 DnD Caracter Collection
+					h5 龍與地下城 冒險者收集計劃
+				.col-sm-6.item(style="background: gray")
+					h3 Other
+					h5 其他
+		section#works
+			.container-fuild
+				.block_title.center
+					h1 Works
+					h2 作品
+				.row: .col-12
 
-	section
-		.container
-			.row: .col-12
-				h1 tes
+block body_script
+	script.
+		$('#landing_img').on('slide.bs.carousel', function onSlide (ev) {
+			var id = ev.relatedTarget.id;
+			switch (id) {
+				case "first":
+					$( '.big_text' ).css('color','#c3ba8a');
+					$( '.landing_left, .landing_info').css('background','#f0f0f0')
+					break;
+				case "second":
+					$( '.big_text' ).css('color','#ff7907');
+					$( '.landing_left, .landing_info').css('background','#f0f0f0')
+					break;
+				case "third":
+					$( '.big_text' ).css('color','#87c0ff');
+					$( '.landing_left, .landing_info').css('background','#efd8d8')
+					break;
+				default:
+			}
+		})
+
+		var scene = document.getElementById('first');
+		var parallax = new Parallax(scene);
+
+		var scene = document.getElementById('second');
+		var parallax = new Parallax(scene);
+
+		var scene = document.getElementById('third');
+		var parallax = new Parallax(scene);
+
+
+
+		gsap.registerPlugin(ScrollTrigger);
+
+		var tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.wrap_outline',
+				markers: true,
+				start: 'center center',
+				end: 'center 300',
+				toggleActions: 'play none reverse none'
+			}
+		});
+
+		tl.to('.en_wrap',		 { width: '100%', duration: 0.4, ease: Power2.easeIn})
+		.to('.wrap_outline h1',  { opacity: 1,  duration: 0.1, delay: 0.1, ease: Power2.easeIn})
+		.to('.en_wrap',			 { left: 'auto', right: '0',  duration: 0.1, ease: Power2.easeIn})
+		.to('.en_wrap',			 { width: '0', duration: 0.4, ease: Power2.easeIn})
+
+
+
+		//- ScrollTrigger.create({
+		//- 	trigger: 'section',
+		//- 	markers: true,
+		//- 	start: 'top center',
+		//- 	end: 'top 100px',
+		//- 	end: '+=500',
+		//- 	animation: wraptitle,
+		//- });
+		//- let wraptitle_color = document.querySelectorAll('.en_wrap');
+		//- let wraptitle_word = document.querySelectorAll('.wrap_outline h1')
+
