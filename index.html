@@ -38,22 +38,22 @@
                     </ol>
                     <div class="carousel-inner">
                       <div class="carousel-item active" id="first">
-                        <div class="landing_bg" style="background-image: url('/images/landing_1_bg.png')"></div>
+                        <div class="landing_bg" style="background-image: url('../Images/landing_1_bg.png')"></div>
                         <div class="big_text t1">8</div>
                         <div class="big_text t3">O</div>
-                        <div class="landing_main" data-depth="0.1" style="background-image: url('/images/landing_1_main.png')"></div>
+                        <div class="landing_main" data-depth="0.1" style="background-image: url('../Images/landing_1_main.png')"></div>
                       </div>
                       <div class="carousel-item" id="second">
-                        <div class="landing_bg" style="background-image: url('/images/landing_2_bg.png')"></div>
+                        <div class="landing_bg" style="background-image: url('../Images/landing_2_bg.png')"></div>
                         <div class="big_text t1">8</div>
                         <div class="big_text t3">O</div>
-                        <div class="landing_main" data-depth="0.1" style="background-image: url('/images/landing_2_main.png')"></div>
+                        <div class="landing_main" data-depth="0.1" style="background-image: url('../Images/landing_2_main.png')"></div>
                       </div>
                       <div class="carousel-item" id="third">
-                        <div class="landing_bg" style="background-image: url('/images/landing_3_bg.png')"></div>
+                        <div class="landing_bg" style="background-image: url('../Images/landing_3_bg.png')"></div>
                         <div class="big_text t1">8</div>
                         <div class="big_text t3">O</div>
-                        <div class="landing_main" data-depth="0.1" style="background-image: url('/images/landing_3_main.png')"></div>
+                        <div class="landing_main" data-depth="0.1" style="background-image: url('../Images/landing_3_main.png')"></div>
                       </div>
                     </div>
                   </div>
@@ -96,7 +96,10 @@
         <section id="project">
           <div class="container-fuild">
             <div class="block_title">
-              <h1>Project</h1>
+              <div class="wrap_outline">
+                <h1>Project</h1>
+                <div class="en_wrap"></div>
+              </div>
               <h2>專案</h2>
             </div>
           </div>
@@ -124,7 +127,10 @@
         <section id="works">
           <div class="container-fuild">
             <div class="block_title center">
-              <h1>Works</h1>
+              <div class="wrap_outline">
+                <h1>Works</h1>
+                <div class="en_wrap"></div>
+              </div>
               <h2>作品</h2>
             </div>
             <div class="row">
@@ -172,20 +178,41 @@
       
       gsap.registerPlugin(ScrollTrigger);
       
-      var tl = gsap.timeline({
-      	scrollTrigger: {
-      		trigger: '.wrap_outline',
+      
+      
+      gsap.utils.toArray('section').forEach((section) => {
+      
+      	const wraptitle_outline = section.querySelector('.wrap_outline');
+      	const wraptitle_color = section.querySelector('.en_wrap');
+      	const wraptitle_word = section.querySelector('.wrap_outline h1');
+      
+      	const tl = gsap.timeline();
+      	
+      	ScrollTrigger.create({
+      		trigger: 'wraptitle_outline',
       		markers: true,
       		start: 'center center',
       		end: 'center 300',
-      		toggleActions: 'play none reverse none'
-      	}
+      		animation: tl
+      		
+      	});
+      	
+      	tl.to(wraptitle_color,		 { width: '100%', duration: 0.4, ease: Power2.easeIn})
+      	.to(wraptitle_word,  { opacity: 1,  duration: 0.1, delay: 0.1, ease: Power2.easeIn})
+      	.to(wraptitle_color,			 { left: 'auto', right: '0',  duration: 0.1, ease: Power2.easeIn})
+      	.to(wraptitle_color,			 { width: '0', duration: 0.4, ease: Power2.easeIn})
       });
       
-      tl.to('.en_wrap',		 { width: '100%', duration: 0.4, ease: Power2.easeIn})
-      .to('.wrap_outline h1',  { opacity: 1,  duration: 0.1, delay: 0.1, ease: Power2.easeIn})
-      .to('.en_wrap',			 { left: 'auto', right: '0',  duration: 0.1, ease: Power2.easeIn})
-      .to('.en_wrap',			 { width: '0', duration: 0.4, ease: Power2.easeIn})
+      
+      
+      //- var tl = gsap.timeline({
+      //- 	scrollTrigger: {
+      //- 		trigger: 'wraptitle_outline',
+      //- 		markers: true,
+      //- 		start: 'center center',
+      //- 		end: 'center 300'
+      //- 	}
+      //- });
       
       
       

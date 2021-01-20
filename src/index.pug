@@ -23,20 +23,20 @@ block body_content
 									li(data-target="#landing_img, #landing_bckground" data-slide-to="2")
 								.carousel-inner
 									#first.carousel-item.active
-										.landing_bg(style="background-image: url('/images/landing_1_bg.png')")
+										.landing_bg(style="background-image: url('../Images/landing_1_bg.png')")
 										.big_text.t1 8
 										.big_text.t3 O
-										.landing_main(data-depth="0.1")(style="background-image: url('/images/landing_1_main.png')")
+										.landing_main(data-depth="0.1")(style="background-image: url('../Images/landing_1_main.png')")
 									#second.carousel-item
-										.landing_bg(style="background-image: url('/images/landing_2_bg.png')")
+										.landing_bg(style="background-image: url('../Images/landing_2_bg.png')")
 										.big_text.t1 8
 										.big_text.t3 O
-										.landing_main(data-depth="0.1")(style="background-image: url('/images/landing_2_main.png')")
+										.landing_main(data-depth="0.1")(style="background-image: url('../Images/landing_2_main.png')")
 									#third.carousel-item
-										.landing_bg(style="background-image: url('/images/landing_3_bg.png')")
+										.landing_bg(style="background-image: url('../Images/landing_3_bg.png')")
 										.big_text.t1 8
 										.big_text.t3 O
-										.landing_main(data-depth="0.1")(style="background-image: url('/images/landing_3_main.png')")
+										.landing_main(data-depth="0.1")(style="background-image: url('../Images/landing_3_main.png')")
 								//-
 									a.carousel-control-prev(href="[id^=myCarousel]" role="button" data-slide="prev")
 										span.carousel-control-prev-icon(aria-hidden="true")
@@ -88,7 +88,9 @@ block body_content
 		section#project
 			.container-fuild
 				.block_title
-					h1 Project
+					.wrap_outline
+						h1 Project
+						.en_wrap
 					h2 專案
 			.row.project_card
 				.col-sm-7.item(style="background: #c3c3c3")
@@ -107,7 +109,9 @@ block body_content
 		section#works
 			.container-fuild
 				.block_title.center
-					h1 Works
+					.wrap_outline
+						h1 Works
+						.en_wrap
 					h2 作品
 				.row: .col-12
 
@@ -145,20 +149,41 @@ block body_script
 
 		gsap.registerPlugin(ScrollTrigger);
 
-		var tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.wrap_outline',
+		
+		
+		gsap.utils.toArray('section').forEach((section) => {
+
+			const wraptitle_outline = section.querySelector('.wrap_outline');
+			const wraptitle_color = section.querySelector('.en_wrap');
+			const wraptitle_word = section.querySelector('.wrap_outline h1');
+
+			const tl = gsap.timeline();
+			
+			ScrollTrigger.create({
+				trigger: 'wraptitle_outline',
 				markers: true,
 				start: 'center center',
 				end: 'center 300',
-				toggleActions: 'play none reverse none'
-			}
+				animation: tl
+				
+			});
+			
+			tl.to(wraptitle_color,		 { width: '100%', duration: 0.4, ease: Power2.easeIn})
+			.to(wraptitle_word,  { opacity: 1,  duration: 0.1, delay: 0.1, ease: Power2.easeIn})
+			.to(wraptitle_color,			 { left: 'auto', right: '0',  duration: 0.1, ease: Power2.easeIn})
+			.to(wraptitle_color,			 { width: '0', duration: 0.4, ease: Power2.easeIn})
 		});
-
-		tl.to('.en_wrap',		 { width: '100%', duration: 0.4, ease: Power2.easeIn})
-		.to('.wrap_outline h1',  { opacity: 1,  duration: 0.1, delay: 0.1, ease: Power2.easeIn})
-		.to('.en_wrap',			 { left: 'auto', right: '0',  duration: 0.1, ease: Power2.easeIn})
-		.to('.en_wrap',			 { width: '0', duration: 0.4, ease: Power2.easeIn})
+		
+		
+		
+		//- var tl = gsap.timeline({
+		//- 	scrollTrigger: {
+		//- 		trigger: 'wraptitle_outline',
+		//- 		markers: true,
+		//- 		start: 'center center',
+		//- 		end: 'center 300'
+		//- 	}
+		//- });
 
 
 
