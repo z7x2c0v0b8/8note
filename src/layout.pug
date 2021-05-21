@@ -29,15 +29,39 @@ html(lang="zh-tw")
       link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
       link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.7.2/css/all.css", integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr", crossorigin="anonymous")
       link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css")
-      link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:300,700&display=swap&subset=chinese-traditional")
-      link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,700&display=swap&subset=chinese-traditional")
+      link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;900&family=Noto+Serif+TC:wght@700&display=swap")
+      link(rel="stylesheet", href="https://unpkg.com/pattern.css")
       link(rel="stylesheet", href="./style.css")
 
   body
+    
+    mixin blockTitle(options)
+      .block_title(class=`${options.style}`)
+        .wipe_outline
+          h1= (options.en)
+          .wipe
+        h2= (options.tw)
+
+    mixin pageTitle(options)
+      .pagetitle
+        .text_outline
+          p= (options.year)
+          .wipe_outline
+            h1.mix_blend.m-0= (options.t1)
+            .text_wipe
+          .wipe_outline
+            h1.mix_blend.m-0= (options.t2)
+            .text_wipe
+          .wipe_outline
+            h1.mix_blend.m-0= (options.t3)
+            .text_wipe
+
     .body_outline
       block body_content
 
+
     block body_header
+      include header
 
 
     block init_script
@@ -46,7 +70,7 @@ html(lang="zh-tw")
       script(src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js")
       script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js")
       script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/ScrollTrigger.min.js")
-
+      //-script(src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js")
 
     block body_script
 

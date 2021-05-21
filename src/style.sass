@@ -10,24 +10,40 @@
 
 
 
-body
-	font-family: 'DM Serif Display', serif
+body, html
+	font-family: 'Noto Sans TC', serif
+	scroll-behavior: smooth
+	background-image: url('../Images/book/bg.png')
+	background-size: 100vw
+	background-attachment: fixed
 	h1
 		color: #c3c3c3
 	section
 		padding: 80px 0
 		width: 100%
+	a:link, a:visited, a:hover, a:active
+		color: #232323
+		text-decoration: none
+		p
+			color: #232323
+	@media (max-width: 721px)
+		width: 100vw
+		overflow-x: hidden
+	
+
 .block_title
-	position: absolute
-	.wrap_outline
+	position: relative
+	.wipe_outline
 		position: relative
+		display: inline-block
 		h1
+			display: inline-block
 			font-size: 180px
 			font-family: MADECanvas
 			color: #232323
 			margin-bottom: 0
 			opacity: 0
-		.en_wrap
+		.wipe
 			position: absolute
 			top: 0
 			left: 0
@@ -46,12 +62,16 @@ body
 		left: 240px
 		line-height: 1
 		-webkit-text-fill-color: transparent
-		-webkit-text-stroke-width: 1.5px
-		-webkit-text-stroke-color: #232323
+		-webkit-text-stroke-width: .5px
+		-webkit-text-stroke-color: #424242
+	.title_chinese
+		position: absolute
+		top: 130px
+		left: 240px
+
 	&.center
-		left: 0
-		right: 0
-		margin: 0 auto
+		left: 50%
+		transform: translateX(-50%) 
 		text-align: center
 		h2
 			top: -60px
@@ -59,9 +79,68 @@ body
 			right: 0
 			margin: 0 auto
 
+.block_wipe, .text_wipe
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: #232323
+	z-index: 9
+	&.full
+		z-index: 9999
+		background-color: #000
+.text_wipe
+	left: auto
+	right: 0
+	z-index: 99
 
-#index
+
+.pagetitle
+	position: relative
+	.text_outline
+		position: absolute
+		top: 95px
+		left: 250px
+		.wipe_outline
+			position: relative
+	p
+		position: relative
+		z-index: 99
+	h1
+		font-size: 50px
+		font-family: MADECanvas
+		color: #000
+		position: relative
+		z-index: 99
+		&.mix_blend			
+			color: #fff
+			position: relative
+			mix-blend-mode: difference
+
+#header
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 60px
+	z-index: 99
+	mix-blend-mode: difference
+	.nav_logo
+		font-family: MADECanvas
+		margin-left: 10px
+	.navbar-nav
+		margin-right: 10px
+		.nav-item
+			width: 8vw
+			text-align: right
+		a.nav-link
+			color: #c3c3c3
+		
+
+#index, #project
 	#landing
+		padding: 0
 		margin-bottom: 30vh
 		#landing_img
 			.carousel-control-prev
@@ -84,33 +163,49 @@ body
 					z-index: 9 !important
 		.landing_left
 			background: #f0f0f0
+			position: relative
 			margin-left: 15vw
 			margin-top: 40vh
-			padding: 95px 0 0 250px
 			width: calc(100% - 13vw + 31px)
 			height: 60vh
 			transition-duration: .5s
-			h1
-				font-size: 50px
-				font-family: MADECanvas
-				color: #000
-				position: relative
-				z-index: 99
-				&.mix_blend			
-					color: #fff
-					position: relative
-					mix-blend-mode: difference
-
 			p
 				position: relative
-				z-index: 9
+				z-index: 99
+			.landing_circle_outline
+				position: absolute
+				top: -170px
+				left: -90px
+				width: 200px
+				height: 200px
+				.landing_circle
+					position: absolute
+					background-image: url('../Images/landing_circle.svg')
+					background-size: cover
+					width: 200px
+					height: 200px
+					animation: rotation
+					animation-iteration-count: infinite
+					animation-timing-function: linear
+					animation-duration: 15s
+				.text
+					font-family: MADECanvas
+					font-size: 90px
+					line-height: 200px
+					text-align: center
+				@keyframes rotation
+					0%
+						transform: rotate(0deg)
+					100%
+						transform: rotate(360deg)						
+					
 		.landing_right
 			position: relative
 			background: #c3c3c3
 			height: 100vh
 			.big_text
 				position: absolute
-				color: #c3ba8a
+				color: #ffe326
 				font-size: 350px
 				font-family: MADECanvas
 				line-height: .7
@@ -121,14 +216,16 @@ body
 				&.t2
 					top: calc(40vh - 60px) !important
 					left: -22vw !important
+					z-index: 9
 				&.t3
 					top: 40vh !important
 					right: -20px !important
 					left: auto !important
+					z-index: 999
 				&.t4
 					top: 80vh !important
 					right: 22vw !important
-					z-index: 9
+					z-index: 999
 				&.t5
 					top: 120vh !important
 					right: 44vw !important
@@ -144,7 +241,15 @@ body
 	position: relative
 	margin-top: 400px
 	min-height: 550px
-	background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(240,240,240,1) 30%)
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 30%, rgba(240,240,240,1) 30%)
+	.background_right
+		position: absolute
+		top: 0
+		right: 0
+		width: 70%
+		height: 100%
+		background: linear-gradient(160deg,rgba(255,227,38,1) 0%,rgba(241,241,241,1) 50%)
+
 	h5
 		margin-bottom: 50px
 	.about_info
@@ -152,12 +257,13 @@ body
 	p
 		padding-right: 300px
 	.block_title
+		position: absolute
 		top: -150px
     
     
-#project
+#project_list
 	padding-bottom: 0
-	background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(240,240,240,1) 30%)
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 30%,rgb(241, 241, 241) 30%)
 	min-height: 500px
 	.block_title
 		position: relative
@@ -165,18 +271,487 @@ body
 		top: -50px
 		left: 400px
 	.project_card
+		position: relative
 		text-align: right
-		min-height: 250px
+		min-height: 300px
 		margin-bottom: 10px
 		.item
 			display: flex
 			flex-direction: column
 			justify-content: flex-end
+			padding: 10px 30px
+			background-position: center
+			background-size: cover
+			//-filter: saturate(.5)
+			cursor: pointer
 			.col-sm-6
 				background: #c3c3c3
 			.col-sm-4
 				background: gray
 			&.right
 				text-align: left
+				.adjust_layer
+					background: linear-gradient(200deg, rgba(0,0,0,0) 40%, #e4e4e4 100%)
+			&:hover
+				.wipe
+					width: 100%
+					left: 0
+					right: auto
+		.adjust_layer
+			position: absolute
+			width: 100%
+			height: 100%
+			top: 0
+			right: 0
+			background: linear-gradient(160deg, rgba(0,0,0,0) 40%, #e4e4e4 100%)
+		.wipe
+			position: absolute
+			width: 0
+			height: 100%
+			top: 0
+			right: 0
+			background-color: #b1b1b1
+			transition-duration: .3s
+			mix-blend-mode: hard-light
     
-    
+#works
+	padding-top: 100px
+	.work_card
+		background-color: #000
+		margin-bottom: 8px
+		background-size: cover
+		background-position: top center
+		&.vertical
+			padding: 65% 50%
+		&.horizon
+			padding: 35% 50%
+
+#landing_commision
+	background: linear-gradient(180deg, rgba(195,195,195,0) 70%,rgb(255, 227, 38) 100%);
+	.block_title
+		h2
+			top: 120px
+	.row
+		margin: 150px 0 100px
+		display: flex
+		justify-content: center
+
+
+#project
+	#banner
+		padding: 0
+		height: 80vh
+		width: 100%
+		.pagetitle
+			.text_outline
+				top: 250px
+				left: 150px
+				.wipe_outline
+					position: relative
+
+
+		.left_color
+			background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 30%, rgba(228,228,228,1) 30%)
+		.landing_banner
+			position: relative
+			width: 100%
+			height: 80vh
+			background-image: url('../Images/dnd_landing.png')
+			background-size: cover
+			background-position: 10% 50%
+			.banner_pattern
+				position: absolute
+				top: 0
+				bottom: 0
+				margin: auto 0
+				right: 0
+				width: 20%
+				height: 40vh
+				color: rgb(255, 227, 38)
+	#intro
+		position: relative
+		background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 15%, rgba(228,228,228,1) 15%)
+		.intro_bg
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 150vh
+			background-image: url('../Images/project_1.png')
+			background-size: cover
+			background-position: 0 50%
+			background-color: #000
+			background-attachment: fixed
+			filter: opacity(0.1) blur(1px)
+			z-index: -9
+		.words
+			width: 60%
+			word-wrap: break-word
+	#character
+		padding-top: 200px
+		.main
+			position: relative
+			width: 100%
+			padding: 100px 100px 135px
+			background: rgba(228,228,228,1)
+			.list_group
+				position: absolute
+				top: -150px
+				left: 0
+				.list
+					display: flex
+					flex-wrap: wrap
+					width: 500px
+					height: 100px
+					.list_item
+						width: 100px
+						height: 100px
+						margin-left: 5px
+						border-radius: 120px
+						background: #c3c3c3
+						background-size: cover
+			.character_info
+				display: flex
+				.character
+					flex: 3
+					width: 100%
+					height: 900px
+					background-size: 100% auto
+					background-repeat: no-repeat
+				.info
+					flex: 3
+					margin-left: 50px
+					p
+						margin: 0
+					h2
+						margin-bottom: 20px
+						color: #232323
+					.type
+						margin-bottom: 50px
+					.feature
+						border-left: solid 5px #232323
+						padding-left: 15px
+						margin-bottom: 20px
+						.item
+							color: #636363
+							font-size: 14px
+					.story
+						margin: 45px 0
+
+
+/**********
+	book
+/**********
+#book
+	section
+		padding: 100px 0
+	.block_wipe.full
+		width: 105vw
+	.block_title
+		h3
+			color: #563d36
+			opacity: 0
+			font-family: 'Noto Serif TC'
+		.wipe
+			background-color: #141414
+	.title
+		display: inline-block
+	.pagetitle
+		.text_outline
+			position: initial
+		h1.mix_blend
+			mix-blend-mode: difference
+		.text_wipe
+			background-color: #141414
+	.btn_sheet
+		width: 250px
+		margin: 0 auto
+		padding: 10px 0
+		border-top: 1px #000 solid
+		border-bottom: 1px #000 solid
+		background-color: #f3f3f3
+		font-size: 1.2rem
+		font-family: 'Noto Serif TC'
+		text-align: center
+		cursor: pointer
+		transition-duration: .5s
+		&:hover
+			transition-duration: .5s
+			width: 300px
+			background-color: #232323
+			color: #fff
+	@media (max-width: 721px)
+		.row
+			padding: 0 10px
+	#opening
+		position: relative
+		width: 100%
+		height: 100vh
+		.line
+			position: absolute
+			top: 0
+			left: 60%
+			width: 1px
+			height: 0
+			background-color: #2e333b
+			transform: rotate(11deg)
+			transform-origin: top
+		.label
+			position: absolute
+			top: 20px
+			left: 62%
+			font-family: MADECanvas
+			font-size: 14px
+			line-height: 1.5
+		.character_left
+			position: absolute
+			top: 0
+			left: -70px
+			padding: 21% 23%
+			background-size: contain
+			background-repeat: no-repeat
+			background-image: url("./Images/book/opening_cha1.png")
+			&.mask
+				background-size: 130% 130%
+				background-image: url("./Images/book/opening_mask.png")
+				background-position-x: -50px
+				-webkit-mask: -webkit-image-set(url("./Images/book/opening_cha1.png") 1x) no-repeat center center/contain
+				-webkit-mask-position-x: left
+			
+		.character_right
+			position: absolute
+			background-size: contain
+			background-repeat: no-repeat
+			&.top
+				top: 0
+				right: -15px
+				padding: 33% 20%
+				background-image: url('./Images/book/opening_cha5.png')
+			&.bottom
+				top: 35%
+				right: 150px
+				padding: 22% 20%
+				background-image: url('./Images/book/opening_cha4.png')
+			&.top.mask
+				background-size: 130% 130%
+				background-image: url("./Images/book/opening_mask.png")
+				background-position-x: -50px
+				-webkit-mask: -webkit-image-set(url("./Images/book/opening_cha5.png") 1x) no-repeat center center/contain
+				-webkit-mask-position-x: left
+				-webkit-mask-position-y: top				
+			&.bottom.mask
+				background-size: 150% 150%
+				background-image: url("./Images/book/opening_mask.png")
+				background-position-x: -200px
+				-webkit-mask: -webkit-image-set(url("./Images/book/opening_cha4.png") 1x) no-repeat center center/contain
+				-webkit-mask-position-x: left
+			
+		
+		.character_center
+			position: absolute
+			top: 0
+			left: 50%
+			transform: translateX(-55%)
+			background-size: contain
+			background-repeat: no-repeat
+			&.top
+				top: 10px
+				padding: 18% 23%
+				background-image: url('./Images/book/opening_cha2.png')
+			&.bottom
+				top: 35%
+				padding: 27% 23%
+				transform: translateX(-70%)
+				background-image: url('./Images/book/opening_cha3.png')
+			&.top.mask
+				background-size: 130% 130%
+				background-image: url("./Images/book/opening_mask.png")
+				background-position-x: -100px
+				-webkit-mask: -webkit-image-set(url("./Images/book/opening_cha2.png") 1x) no-repeat center center/contain
+				-webkit-mask-position-x: left
+			&.bottom.mask
+				background-size: 120% 120%
+				background-image: url("../Images/book/opening_mask.png")
+				background-position-x: -150px
+				-webkit-mask: -webkit-image-set(url("./Images/book/opening_cha3.png") 1x) no-repeat center center/contain
+				-webkit-mask-position-x: left
+				
+		.title
+			margin-top: 70%
+			margin-left: 10%
+			font-family: MADECanvas
+			h1
+				font-size: 3.8rem
+				line-height: 1.1
+				color:#a1bac1
+			h2
+				font-size: 1.2rem
+				margin-top: 30px
+				color: #563d36
+
+	#intro
+		text-align: center
+		min-height: 500px
+		padding: 300px 0 150px
+		display: flex
+		align-items: center
+		justify-content: center
+		@media (max-width: 721px)
+			.block_title
+				margin-bottom: 15px
+		
+	#descript
+		background-image: url('./Images/book/descript_bg.png')
+		background-size: cover
+		.desc
+			text-align: justify
+			margin-top: 50px
+			padding-right: 50px
+			@media (max-width: 721px)
+				padding: 0
+				margin: 30px 0 70px
+				
+		&.ending
+			background-image: url('./Images/book/ending_bg.png')
+			background-size: cover
+			text-align: right
+			p
+				padding-left: 40px
+				text-align: left
+			@media (max-width: 721px)
+				text-align: left
+				h3
+					margin-bottom: 30px
+				p
+					padding-left: 0
+					text-align: justify
+	#detail
+		.detail_card
+			.price
+				text-align: right
+				h1
+					font-size: 2.75rem
+					font-weight: 800
+					color: #563d36
+					font-family: 'Noto Serif TC'
+			ul
+				.system
+					font-size: 1.2rem
+					font-family: 'Noto Serif TC'
+					margin-bottom: 20px
+				li
+					margin-bottom: 10px
+
+		@media (max-width: 721px)
+			padding-bottom: 0
+			.detail_card
+				.price
+					text-align: left
+					margin-bottom: 30px
+				ul
+					padding: 0
+
+	#book_repo
+		#book_carousel
+			margin-bottom: 80px
+			.carousel-indicators
+				bottom: auto
+				top: -30px
+				li
+					background-color: #232323
+			.preview
+				padding: 27% 50%
+				background-size: cover
+				background-position: center
+
+
+
+		.btn_group
+			display: flex
+			justify-content: space-between
+			margin: 0 10vw 30px
+			.btn_repo
+				width: 100%
+				padding: 8px
+				margin: 0 10px
+				border-top: 1px #000 solid
+				border-bottom: 1px #000 solid
+				background-color: #f3f3f3
+				font-size: 1rem
+				font-family: MADECanvas
+				text-align: center
+				cursor: pointer
+				transition-duration: .5s
+				&.blue
+					background-color: #d8d9e0
+				&.red
+					background-color: #e0d5d5
+				&.green
+					background-color: #d8e2db
+				&.yellow
+					background-color: #eae7dd
+				&.purple
+					background-color: #dcc7d1
+				&:hover
+					transition-duration: .5s
+					background-color: #232323
+					color: #fff
+			@media (max-width: 721px)
+				justify-content: center
+				margin: 0 0 30px
+				flex-wrap: wrap
+				.btn_repo
+					width: 30%
+					margin: 0 2px 5px
+
+	@media (max-width: 721px)
+		#opening
+			padding: 0
+			height: 140%
+			.line
+				display: none
+			.label
+				display: none
+			.title
+				margin-top: 100%
+				margin-left: 5%
+				.pagetitle
+					h1
+						font-size: 2.8rem
+			.character_left
+				padding: 44% 47%
+				left: -40px
+				&.mask
+					display: none
+			.character_center
+				&.top
+					top: 0%
+					left: 45%
+					padding: 44% 47%
+					transform: inherit
+				&.top.mask
+					display: none
+				&.bottom
+					top: 24%
+					left: 28%
+					padding: 56% 54%
+					transform: inherit
+				&.bottom.mask
+					display: none
+			.character_right
+				&.top
+					top: 61%
+					left: 17%
+					padding: 63% 49%
+					transform: inherit
+					z-index: 9
+				&.top.mask
+					display: none
+				&.bottom
+					top: 82%
+					left: -17%
+					padding: 44% 44%
+					transform: inherit
+					z-index: 99
+				&.bottom.mask
+					display: none

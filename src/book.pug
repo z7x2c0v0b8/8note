@@ -1,0 +1,286 @@
+extends layout
+
+block body_header
+
+block body_content
+
+	.page#book
+		section#opening
+			.container-fuild
+				.character_left
+				.character_left.mask
+				.character_center.top
+				.character_center.top.mask
+				.line
+				.label
+					p 
+						| 2020.7 - 2021.4
+						br
+						| DnD 5e
+				.character_right.top
+				.character_right.top.mask
+				.character_right.bottom
+				.character_right.bottom.mask
+				.character_center.bottom
+				.character_center.bottom.mask
+				.row
+					.col-sm-5
+						.title
+							+pageTitle({
+								t1: 'Dungeons',
+								t2: 'and',
+								t3: 'Dragons'
+							})
+
+							h2
+								| Report Book for
+								br
+								| Lost Mine of Phandelver
+			.block_wipe.full(style="background-color: #141414")
+
+
+		section#intro
+			.container-fluid
+				.row: .col
+					.block_title
+						.wipe_outline
+							h3 龍與地下城 5e - 凡杜林的失落礦坑 團務紀錄創作本
+							.wipe 
+					p(style="margin-bottom: 50px") B5 橫式全彩本 + A5 直式黑白漫畫附錄 / 42p (本體) + 11p (附錄) / NT$300
+					.btn_sheet 填寫預購 5/22 ~ 6/5
+
+		section#descript
+			.container
+				.row
+					.col-sm-6
+						.block_title
+							.wipe_outline
+								h3 關於「龍與地下城」
+								.wipe
+						p.desc
+							| 《龍與地下城》( Dungeons & Dragons，簡稱 D&D 或 DnD ），是一款奇幻背景的桌上角色扮演遊戲（ Tabletop Role Playing Game, TRPG ）。根據遊玩的劇本與遊戲規則，遊戲主持人和玩家將扮演其中的角色共同推進故事發展。
+							br
+							| 本次遊戲採用 5e 版本進行遊玩，劇本為《凡杜林的失落礦坑》( Lost Mine of Phandelver )
+							br
+							br
+							| ( 資料參考：維基百科 )
+					.col-sm-6
+						.block_title
+							.wipe_outline
+								h3 什麼是「團務紀錄」？
+								.wipe
+						p.desc
+							| 進行 TRPG 的遊戲過程俗稱「跑團」，將跑團時的過程透過文字、圖片、影片、遊戲……等方式記錄記錄下來，稱作「團務紀錄」( 俗稱 Repo )
+							br
+							| 本書記錄著冒險者們在旅途中發生的大小事，收錄約 50 張的設定、插圖外，並節錄文字紀錄輔佐圖像，希望能透過此書帶給大家自己在冒險中所獲得的樂趣與感動！
+							br
+						
+
+		section#detail
+			.container
+				.row.detail_card
+					.col-sm-3.price
+						h1 NT$300 
+						p(style="font-size: 14px") *實體價不含運費
+					.col-sm-9
+						ul(style="list-style-type: none")
+							li.system B5 橫式全彩本 | 42 頁 + A5 直式黑白漫畫附錄 | 11 頁
+							li * 漫畫附錄形式將根據全彩本的內容安排，依序章節分開輸出夾入全彩本內頁。
+							li * 本次團務為公開團務，全文字與影片紀錄檔已於網路上公開，本書收錄之相關圖片創作則已釋出約 2/3 的量於各大社群平台上。
+							li * 本書內容著重於玩家們的原創角色故事，但仍會有少部分提及劇本裡的角色與情節，而造成少量的劇本內容透露。
+				
+		section#book_repo
+			.container
+				.row: .col-12.p-0
+					.carousel.slide#book_carousel(data-ride="carousel")
+						ol.carousel-indicators
+							li.active(data-target="#book_carousel", data-slide-to="0")
+							li(data-target="#book_carousel", data-slide-to="1")
+							li(data-target="#book_carousel", data-slide-to="2")
+							li(data-target="#book_carousel", data-slide-to="3")
+							li(data-target="#book_carousel", data-slide-to="4")
+						
+						.carousel-inner
+							.carousel-item.active
+								.preview(style='background-image: url("../Images/landing_2.png")')
+							.carousel-item
+								.preview(style='background-image: url("../Images/landing_2.png")')
+							.carousel-item
+								.preview(style='background-image: url("../Images/landing_2.png")')
+							.carousel-item
+								.preview(style='background-image: url("../Images/landing_2.png")')
+							.carousel-item
+								.preview(style='background-image: url("../Images/landing_2.png")')
+
+						a.carousel-control-prev(href="#book_carousel" role="button" data-slide="prev")
+							span.carousel-control-prev-icon(aria-hidden="true")
+							span.sr-only Previous
+
+						a.carousel-control-next(href="#book_carousel" role="button" data-slide="next")
+							span.carousel-control-next-icon(aria-hidden="true")
+							span.sr-only Next
+
+					.btn_group
+						a.btn_repo.blue(href="https://www.plurk.com/p/o5kann", target="_blank") Repo #1
+						a.btn_repo.red(href="https://www.plurk.com/p/o7cvge", target="_blank") Repo #2
+						a.btn_repo.green(href="https://www.plurk.com/p/o9nd4c", target="_blank") Repo #3
+						a.btn_repo.yellow(href="https://www.plurk.com/p/ob3ibi", target="_blank") Repo #4
+						a.btn_repo.purple(href="https://www.plurk.com/p/obw1cm", target="_blank") Repo #5
+
+					a(href="https://www.plurk.com/p/ob3smc", target="_blank")
+						.btn_sheet 全文字紀錄
+
+		section#descript.ending
+			.container
+				.row
+					.col-sm-3
+						.block_title
+							.wipe_outline
+								h3(style="font-size: 2.75rem") Cast
+								.wipe
+					.col-sm-9
+						p
+							| 遊戲主持人 ( DM ) ：好長
+							br
+							br
+							| 玩家( PL )：
+							br
+							| 羽入 ( 費沙 )、阿皮 ( 維德 )、紊淆( 菲 )、酹月 ( 洛爾 )、八音諧 ( 伊努斯 )
+
+				.row(style="margin-top: 200px"): .col-12 
+					.btn_sheet 預購本書 5/22 ~ 6/5
+block body_script
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js")
+	script.
+		gsap.to('.block_wipe.full', { width: '0', duration: 1,  delay: 0.8, ease: Power4.easeInOut})
+		gsap.to('.character_left.mask', { backgroundPositionX: '40vw', duration: .8,  delay: 1.6, ease: Power4.easeInOut})
+		
+		gsap.to('.character_center.top.mask', { backgroundPositionX: '40vw', duration: .8,  delay: 1.6, ease: Power4.easeInOut})
+		gsap.to('.character_center.bottom.mask', { backgroundPositionX: '40vw', duration: .8,  delay: 1.6, ease: Power4.easeInOut})
+		
+		gsap.to('.character_right.top.mask', { backgroundPositionX: '40vw', duration: .8,  delay: 1.6, ease: Power4.easeInOut})
+		gsap.to('.character_right.bottom.mask', { backgroundPositionX: '40vw', duration: .8,  delay: 1.6, ease: Power4.easeInOut})
+		
+		gsap.to('.text_wipe', { width: '0', duration: 1, ease: Power4.easeInOut, delay: 2, stagger: 0.1})
+
+		gsap.to('.line', { height: '130vh', duration: 1, ease: Power4.easeInOut, delay: 2.8, stagger: 0.1})
+		
+		gsap.registerPlugin(ScrollTrigger);
+		
+		gsap.utils.toArray('section').forEach(section => {
+
+			gsap.timeline({
+				scrollTrigger: {
+					trigger: section.querySelector('.wipe_outline'),
+					//-markers: true,
+					start: 'top 75%'
+				}
+			})
+			.to(section.querySelectorAll('.wipe'),		 { width: '100%', duration: 0.4, ease: Power2.easeIn})
+			.to(section.querySelectorAll('.wipe_outline h3'),  { opacity: 1,  duration: 0.1, delay: 0.1, ease: Power2.easeIn})
+			.to(section.querySelectorAll('.wipe'),			 { left: 'auto', right: '0',  duration: 0.1, ease: Power2.easeIn})
+			.to(section.querySelectorAll('.wipe'),			 { width: '0', duration: 0.4, ease: Power2.easeIn});
+		});
+
+		new Vue({
+			el: '#character_libery',
+			data: {
+				en: 'Bisharp Galanodel',
+				name: '畢夏普．迦蘭諾德',
+				type: '高等精靈(日精靈) / 吟遊詩人 / 混亂善良',
+				feature: '做事俐落而不拖沓。正直，並以此為傲。',
+				idea: '我將憑著自身的智慧扭轉那些命運之下看似已成定局的悲劇。',
+				bind: '任何善待於我的人，我將盡我所能的回報於他。',
+				bad: '固執，易強加自我原則於他人。',
+				story: '出生於精靈故鄉永聚島 ( Evermeet ) 的日精靈',
+				image: '../Images/dnd_cha_1.png',
+
+				en1: 'Bisharp Galanodel',
+				name1: '畢夏普．迦蘭諾德',
+				type1: '高等精靈(日精靈) / 吟遊詩人 / 混亂善良',
+				feature1: '做事俐落而不拖沓。正直，並以此為傲。',
+				idea1: '我將憑著自身的智慧扭轉那些命運之下看似已成定局的悲劇。',
+				bind1: '任何善待於我的人，我將盡我所能的回報於他。',
+				bad1: '固執，易強加自我原則於他人。',
+				story1: '出生於精靈故鄉永聚島 ( Evermeet ) 的日精靈',
+				image1: '../Images/dnd_cha_1.png',
+
+				en2: 'Fischer',
+				name2: '費莎',
+				type2: '阿斯莫 / 聖騎士 / 混亂善良',
+				feature2: '好惡分明，不過對善良以及邪惡的判斷很主觀，並且表達喜愛和厭惡的方式似乎和常人不太相同。',
+				idea2: '對從未在家鄉看過的一切事物都感到好奇且興奮。',
+				bind2: '認為自由至高、不喜歡受人拘束，因此一直以來都自由選擇想做的事情，也希望他人可以是自由的。',
+				bad2: '本能地無法抗拒新奇事物、聽來有趣的事情或是異國美人。',
+				story2: '出生自距離北地非常遙遠的「索薩爾（Sossal）」。儘管是阿斯莫族的一人，卻和在索薩爾生活的住民們一樣有著光潔的皮膚和雪白的頭髮。一直嚮往著索薩爾之外的世界樣貌，因此小時候就很愛在索薩爾邊境玩只有一個人的探索遊戲。',
+				image2: '../Images/dnd_cha_2.png',
+
+				en3: 'Feris',
+				name3: '菲',
+				type3: '人類 / 遊俠 / 中立善良',
+				feature3: '我善於觀察自然，從中我得到能應對任何境況的經驗。',
+				idea3: '大義。部落整體的幸福，是每名成員的義務。',
+				bind3: '撫養幼童繼承部落是我的責任。',
+				bad3: '我不會救那些無法自救者。物競天擇，強者生存。',
+				story3: '我的部落在一座叢林之中，部落中人人都是狩獵好手。14歲那年的成年狩獵儀式我和伙伴一同狩獵到一隻成年野豬，族長將兩隻獠牙分別給了我們作為成年的證明。',
+				image3: '../Images/dnd_cha_3.png',
+			},
+			methods: {
+				changeItem1() {
+					this.en = this.en1;
+					this.name = this.name1;
+					this.type = this.type1;
+					this.feature = this.feature1;
+					this.idea = this.idea1;
+					this.bind = this.bind1;
+					this.bad = this.bad1;
+					this.story = this.story1;
+					this.image = this.image1;
+					return this.en;
+					return this.name;
+					return this.type;
+					return this.feature;
+					return this.idea;
+					return this.bind;
+					return this.bad;
+					return this.story;
+					return this.image;
+				},
+				changeItem2() {
+					this.en = this.en2;
+					this.name = this.name2;
+					this.type = this.type2;
+					this.feature = this.feature2;
+					this.idea = this.idea2;
+					this.bind = this.bind2;
+					this.bad = this.bad2;
+					this.story = this.story2;
+					this.image = this.image2;
+					return this.en;return this.name;return this.type;return this.feature;return this.idea;return this.bind;return this.bad;return this.story;return this.image;
+				},
+				changeItem3() {
+					this.en = this.en3;
+					this.name = this.name3;
+					this.type = this.type3;
+					this.feature = this.feature3;
+					this.idea = this.idea3;
+					this.bind = this.bind3;
+					this.bad = this.bad3;
+					this.story = this.story3;
+					this.image = this.image3;
+					return this.en;return this.name;return this.type;return this.feature;return this.idea;return this.bind;return this.bad;return this.story;return this.image;
+				},
+				changeItem4() {
+					this.en = this.en3;
+					this.name = this.name3;
+					this.type = this.type3;
+					this.feature = this.feature3;
+					this.idea = this.idea3;
+					this.bind = this.bind3;
+					this.bad = this.bad3;
+					this.story = this.story1;
+					this.image = this.image1;
+					return this.en;return this.name;return this.type;return this.feature;return this.idea;return this.bind;return this.bad;return this.story;return this.image;				
+				}
+			}
+		})
