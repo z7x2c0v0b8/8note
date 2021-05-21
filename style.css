@@ -7,7 +7,7 @@
 body, html {
   font-family: 'Noto Sans TC', serif;
   scroll-behavior: smooth;
-  background-image: url("../images/book/bg.png");
+  background-image: url("./images/book/bg.png");
   background-size: 100vw;
   background-attachment: fixed; }
   body h1, html h1 {
@@ -637,7 +637,7 @@ body, html {
       -webkit-mask-position-x: left; }
     #book #opening .character_center.bottom.mask {
       background-size: 120% 120%;
-      background-image: url("../images/book/opening_mask.png");
+      background-image: url("./images/book/opening_mask.png");
       background-position-x: -150px;
       -webkit-mask: -webkit-image-set(url("./images/book/opening_cha3.png") 1x) no-repeat center center/contain;
       -webkit-mask-position-x: left; }
