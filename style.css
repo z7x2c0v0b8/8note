@@ -7,7 +7,7 @@
 body, html {
   font-family: 'Noto Sans TC', serif;
   scroll-behavior: smooth;
-  background-image: url("../Images/book/bg.png");
+  background-image: url("../images/book/bg.png");
   background-size: 100vw;
   background-attachment: fixed; }
   body h1, html h1 {
@@ -176,7 +176,7 @@ body, html {
       height: 200px; }
       #index #landing .landing_left .landing_circle_outline .landing_circle, #project #landing .landing_left .landing_circle_outline .landing_circle {
         position: absolute;
-        background-image: url("../Images/landing_circle.svg");
+        background-image: url("../images/landing_circle.svg");
         background-size: cover;
         width: 200px;
         height: 200px;
@@ -392,7 +392,7 @@ body, html {
     position: relative;
     width: 100%;
     height: 80vh;
-    background-image: url("../Images/dnd_landing.png");
+    background-image: url("../images/dnd_landing.png");
     background-size: cover;
     background-position: 10% 50%; }
     #project #banner .landing_banner .banner_pattern {
@@ -417,7 +417,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 150vh;
-    background-image: url("../Images/project_1.png");
+    background-image: url("../images/project_1.png");
     background-size: cover;
     background-position: 0 50%;
     background-color: #000;
@@ -575,12 +575,12 @@ body, html {
     padding: 21% 23%;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url("./Images/book/opening_cha1.png"); }
+    background-image: url("./images/book/opening_cha1.png"); }
     #book #opening .character_left.mask {
       background-size: 130% 130%;
-      background-image: url("./Images/book/opening_mask.png");
+      background-image: url("./images/book/opening_mask.png");
       background-position-x: -50px;
-      -webkit-mask: -webkit-image-set(url("./Images/book/opening_cha1.png") 1x) no-repeat center center/contain;
+      -webkit-mask: -webkit-image-set(url("./images/book/opening_cha1.png") 1x) no-repeat center center/contain;
       -webkit-mask-position-x: left; }
   #book #opening .character_right {
     position: absolute;
@@ -590,24 +590,24 @@ body, html {
       top: 0;
       right: -15px;
       padding: 33% 20%;
-      background-image: url("./Images/book/opening_cha5.png"); }
+      background-image: url("./images/book/opening_cha5.png"); }
     #book #opening .character_right.bottom {
       top: 35%;
       right: 150px;
       padding: 22% 20%;
-      background-image: url("./Images/book/opening_cha4.png"); }
+      background-image: url("./images/book/opening_cha4.png"); }
     #book #opening .character_right.top.mask {
       background-size: 130% 130%;
-      background-image: url("./Images/book/opening_mask.png");
+      background-image: url("./images/book/opening_mask.png");
       background-position-x: -50px;
-      -webkit-mask: -webkit-image-set(url("./Images/book/opening_cha5.png") 1x) no-repeat center center/contain;
+      -webkit-mask: -webkit-image-set(url("./images/book/opening_cha5.png") 1x) no-repeat center center/contain;
       -webkit-mask-position-x: left;
       -webkit-mask-position-y: top; }
     #book #opening .character_right.bottom.mask {
       background-size: 150% 150%;
-      background-image: url("./Images/book/opening_mask.png");
+      background-image: url("./images/book/opening_mask.png");
       background-position-x: -200px;
-      -webkit-mask: -webkit-image-set(url("./Images/book/opening_cha4.png") 1x) no-repeat center center/contain;
+      -webkit-mask: -webkit-image-set(url("./images/book/opening_cha4.png") 1x) no-repeat center center/contain;
       -webkit-mask-position-x: left; }
   #book #opening .character_center {
     position: absolute;
@@ -621,25 +621,25 @@ body, html {
     #book #opening .character_center.top {
       top: 10px;
       padding: 18% 23%;
-      background-image: url("./Images/book/opening_cha2.png"); }
+      background-image: url("./images/book/opening_cha2.png"); }
     #book #opening .character_center.bottom {
       top: 35%;
       padding: 27% 23%;
       -webkit-transform: translateX(-70%);
       -ms-transform: translateX(-70%);
       transform: translateX(-70%);
-      background-image: url("./Images/book/opening_cha3.png"); }
+      background-image: url("./images/book/opening_cha3.png"); }
     #book #opening .character_center.top.mask {
       background-size: 130% 130%;
-      background-image: url("./Images/book/opening_mask.png");
+      background-image: url("./images/book/opening_mask.png");
       background-position-x: -100px;
-      -webkit-mask: -webkit-image-set(url("./Images/book/opening_cha2.png") 1x) no-repeat center center/contain;
+      -webkit-mask: -webkit-image-set(url("./images/book/opening_cha2.png") 1x) no-repeat center center/contain;
       -webkit-mask-position-x: left; }
     #book #opening .character_center.bottom.mask {
       background-size: 120% 120%;
-      background-image: url("../Images/book/opening_mask.png");
+      background-image: url("../images/book/opening_mask.png");
       background-position-x: -150px;
-      -webkit-mask: -webkit-image-set(url("./Images/book/opening_cha3.png") 1x) no-repeat center center/contain;
+      -webkit-mask: -webkit-image-set(url("./images/book/opening_cha3.png") 1x) no-repeat center center/contain;
       -webkit-mask-position-x: left; }
   #book #opening .title {
     margin-top: 70%;
@@ -672,7 +672,7 @@ body, html {
       margin-bottom: 15px; } }
 
 #book #descript {
-  background-image: url("./Images/book/descript_bg.png");
+  background-image: url("./images/book/descript_bg.png");
   background-size: cover; }
   #book #descript .desc {
     text-align: justify;
@@ -683,7 +683,7 @@ body, html {
         padding: 0;
         margin: 30px 0 70px; } }
   #book #descript.ending {
-    background-image: url("./Images/book/ending_bg.png");
+    background-image: url("./images/book/ending_bg.png");
     background-size: cover;
     text-align: right; }
     #book #descript.ending p {
