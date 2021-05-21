@@ -565,13 +565,13 @@ body, html
 				background-image: url('./images/book/opening_cha3.png')
 			&.top.mask
 				background-size: 130% 130%
-				background-image: url("./images/book/opening_mask.png")
+				background-image: url('./images/book/opening_mask.png')
 				background-position-x: -100px
-				-webkit-mask: -webkit-image-set(url("./images/book/opening_cha2.png") 1x) no-repeat center center/contain
+				-webkit-mask: -webkit-image-set(url('./images/book/opening_cha2.png') 1x) no-repeat center center/contain
 				-webkit-mask-position-x: left
 			&.bottom.mask
 				background-size: 120% 120%
-				background-image: url("../images/book/opening_mask.png")
+				background-image: url('../images/book/opening_mask.png')
 				background-position-x: -150px
 				-webkit-mask: -webkit-image-set(url("./images/book/opening_cha3.png") 1x) no-repeat center center/contain
 				-webkit-mask-position-x: left
@@ -652,6 +652,7 @@ body, html
 					padding: 0
 
 	#book_repo
+		padding-top: 50px
 		#book_carousel
 			margin-bottom: 80px
 			.carousel-indicators
@@ -660,9 +661,11 @@ body, html
 				li
 					background-color: #232323
 			.preview
-				padding: 27% 50%
+				padding: 35% 15%
 				background-size: cover
 				background-position: center
+		@media (max-width: 721px)
+			padding-top: 100px
 
 
 

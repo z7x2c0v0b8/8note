@@ -91,7 +91,7 @@ block body_content
 				
 		section#book_repo
 			.container
-				.row: .col-12.p-0
+				.row.d-flex.justify-content-center: .col-md-8.p-0
 					.carousel.slide#book_carousel(data-ride="carousel")
 						ol.carousel-indicators
 							li.active(data-target="#book_carousel", data-slide-to="0")
@@ -99,18 +99,28 @@ block body_content
 							li(data-target="#book_carousel", data-slide-to="2")
 							li(data-target="#book_carousel", data-slide-to="3")
 							li(data-target="#book_carousel", data-slide-to="4")
+							li(data-target="#book_carousel", data-slide-to="5")
+							li(data-target="#book_carousel", data-slide-to="6")
+							li(data-target="#book_carousel", data-slide-to="7")
+
 						
 						.carousel-inner
+							.carousel-item
+								.preview(style='background-image: url("../images/book/preview_8.png")')
 							.carousel-item.active
-								.preview(style='background-image: url("../images/landing_2.png")')
+								.preview(style='background-image: url("../images/book/preview_1.png")')
 							.carousel-item
-								.preview(style='background-image: url("../images/landing_2.png")')
+								.preview(style='background-image: url("../images/book/preview_2.png")')
 							.carousel-item
-								.preview(style='background-image: url("../images/landing_2.png")')
+								.preview(style='background-image: url("../images/book/preview_3.png")')
 							.carousel-item
-								.preview(style='background-image: url("../images/landing_2.png")')
+								.preview(style='background-image: url("../images/book/preview_4.png")')
 							.carousel-item
-								.preview(style='background-image: url("../images/landing_2.png")')
+								.preview(style='background-image: url("../images/book/preview_5.png")')
+							.carousel-item
+								.preview(style='background-image: url("../images/book/preview_6.png")')
+							.carousel-item
+								.preview(style='background-image: url("../images/book/preview_7.png")')
 
 						a.carousel-control-prev(href="#book_carousel" role="button" data-slide="prev")
 							span.carousel-control-prev-icon(aria-hidden="true")
@@ -119,7 +129,7 @@ block body_content
 						a.carousel-control-next(href="#book_carousel" role="button" data-slide="next")
 							span.carousel-control-next-icon(aria-hidden="true")
 							span.sr-only Next
-
+			.row: .col-12.p-0
 					.btn_group
 						a.btn_repo.blue(href="https://www.plurk.com/p/o5kann", target="_blank") Repo #1
 						a.btn_repo.red(href="https://www.plurk.com/p/o7cvge", target="_blank") Repo #2
