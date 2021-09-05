@@ -1,0 +1,161 @@
+extends layout
+
+block body_content
+
+	.page#project_luciful
+		section#banner
+			.container-fluid
+				.row
+					+pageTitle({
+						year: "sice 2020",
+						t1: "Luciful's",
+						t2: "To-Do List",
+						desc: "魔王清單"
+					})
+					.col-sm-3.col-2.p-0.left_color
+					.col-sm-9.col-10.p-0
+						.landing_banner
+							.mask
+							.banner_pattern.pattern-dots-md
+
+		section#intro
+			.intro_bg
+			.container-fluid
+				.row
+					.col-sm-3
+					.col-sm-9
+						p.words
+							| 關於那些成為冒險者前無人知曉的敘事詩。
+							br
+							| 是什麼驅使了人們願意承擔風險踏上未知旅途？
+							br
+							br
+							| 以角色成為冒險者之前的故事為主軸，繪製人物誌類型的系列漫畫，於 2020 年完成第一部《魔王清單 I》，現正繪製《魔王清單 II》中。
+		section#chapter
+			.container
+				.row.justify-content-center
+					.col-sm-5.col-12.mobile_cover
+						h5 Chapter 1
+						h6 魔王清單
+						a(href="https://www.pixiv.net/artworks/91327453", target="_blank")
+							.cover_card(style="background-image: url('./images/chapter_1.jpg')")
+							p.desc
+								| 魔王的一天總是開始於自己的棺材墓中。在他的得力助手露西的督處下，週而復始得完成「魔王清單」上的任務是成為魔王的必經之路， 只要遵循著清單的指示行事，便可擁有身為魔王的一切——至少露西是這樣覺得。但似乎有著比完成代辦清單更讓魔王在意的事⋯⋯。
+					.col-sm-5.col-12.mobile_cover
+						h5 Chapter 2
+						h6 魔王清單 II
+						.cover_card
+							h5.comming
+								| Comming soon...
+								p 11 月上線
+						p.desc
+							| 獲得改變後的魔王路西弗與夥伴狄倫一同經營著屬於兩人的麵包店，但隨著時間過去，路西弗不得不面對自己逐漸虛弱的身體，臨危之際狄倫做出了抉擇……。
+
+
+		section#landing_commision
+			.container-fuild
+				+blockTitle({
+					style: "center",
+					en: "commision",
+					tw: "委託"
+				})
+				.row
+					h4 非商業委託
+					h4.line |
+					h4 商業委託 (Email)
+				
+
+block body_script
+	//- script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js")
+	script.
+		gsap.to('.text_wipe', { width: '0', duration: 1, ease: Power4.easeInOut, delay: 0.3, stagger: 0.1})
+		
+		gsap.registerPlugin(ScrollTrigger);
+		
+		gsap.utils.toArray('section').forEach(section => {
+
+			gsap.timeline({
+				scrollTrigger: {
+					trigger: section.querySelector('.wipe_outline'),
+					//-markers: true,
+					start: 'top 75%'
+				}
+			})
+			.to(section.querySelector('.wipe'),		 { width: '100%', duration: 0.4, ease: Power2.easeIn})
+			.to(section.querySelector('.wipe_outline h1'),  { opacity: 1,  duration: 0.1, delay: 0.1, ease: Power2.easeIn})
+			.to(section.querySelector('.wipe'),			 { left: 'auto', right: '0',  duration: 0.1, ease: Power2.easeIn})
+			.to(section.querySelector('.wipe'),			 { width: '0', duration: 0.4, ease: Power2.easeIn});
+		});
+
+	//- 	new Vue({
+	//- 		el: '#character_libery',
+	//- 		data: {
+	//- 			en: 'Fischer',
+	//- 			name: '費莎',
+	//- 			type: '阿斯莫 / 聖騎士 / 混亂善良',
+	//- 			card: '../Images/dnd_cha_card_2.png',
+	//- 			imageL: '../Images/dnd_cha_img1_2.png',
+	//- 			imageR: '../Images/dnd_cha_img2_2.png',
+
+	//- 			en1: 'Bisharp Galanodel',
+	//- 			name1: '畢夏普．迦蘭諾德',
+	//- 			type1: '高等精靈(日精靈) / 吟遊詩人 / 混亂善良',
+	//- 			image1: '../Images/dnd_cha_1.png',
+	//- 			card1: '../Images/dnd_cha_card_1.png',
+
+	//- 			en2: 'Fischer',
+	//- 			name2: '費莎',
+	//- 			type2: '阿斯莫 / 聖騎士 / 混亂善良',
+	//- 			image2: '../Images/dnd_cha_2.png',
+	//- 			card2: '../Images/dnd_cha_card_2.png',
+	//- 			imageL2: '../Images/dnd_cha_img1_2.png',
+	//- 			imageR2: '../Images/dnd_cha_img2_2.png',
+
+	//- 			en3: 'Feris',
+	//- 			name3: '菲',
+	//- 			type3: '人類 / 遊俠 / 中立善良',
+	//- 			image3: '../Images/dnd_cha_3.png',
+	//- 			card3: '../Images/dnd_cha_card_3.png',
+	//- 			imageL3: '../Images/dnd_cha_img1_3.png',
+	//- 			imageR3: '../Images/dnd_cha_img2_3.png',
+	//- 		},
+	//- 		methods: {
+	//- 			changeItem1() {
+	//- 				this.en = this.en1;
+	//- 				this.name = this.name1;
+	//- 				this.type = this.type1;
+	//- 				this.card = this.card1;
+	//- 				this.imageL = this.imageL1;
+	//- 				this.imageR = this.imageR1;
+	//- 				return this.en;
+	//- 				return this.name;
+	//- 				return this.type;
+	//- 				return this.card;
+	//- 				return this.imageL;
+	//- 				return this.imageR;
+	//- 			},
+	//- 			changeItem2() {
+	//- 				this.en = this.en2;
+	//- 				this.name = this.name2;
+	//- 				this.type = this.type2;
+	//- 				this.card = this.card2;
+	//- 				this.imageL = this.imageL2;
+	//- 				this.imageR = this.imageR2;
+	//- 				return this.en;return this.name;return this.type;return this.image;return this.card;
+	//- 				return this.imageL;
+	//- 				return this.imageR;
+	//- 			},
+	//- 			changeItem3() {
+	//- 				this.en = this.en3;
+	//- 				this.name = this.name3;
+	//- 				this.type = this.type3;
+	//- 				this.image = this.image3;
+	//- 				this.card = this.card3;
+	//- 				this.imageL = this.imageL3;
+	//- 				this.imageR = this.imageR3;
+	//- 				return this.en;return this.name;return this.type;return this.image;return this.card;
+	//- 				return this.imageL;
+	//- 				return this.imageR;
+	//- 			}
+	//- 		}
+	//- 	})

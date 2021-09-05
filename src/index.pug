@@ -6,7 +6,7 @@ block body_content
 		#landing
 			.container-fuild
 				.row
-					.col-5
+					.col-sm-5.col-2
 						.landing_left
 							+pageTitle({
 								year: 'since 2018',
@@ -18,7 +18,7 @@ block body_content
 								.landing_circle
 								.text 8
 							.block_wipe
-					.col-7
+					.col-sm-7.col-10.landing_right_outline
 						.landing_right#js-scene
 							#landing_img.carousel.slide.carousel-fade(data-ride="carousel")
 								ol.carousel-indicators
@@ -27,20 +27,20 @@ block body_content
 									li(data-target="#landing_img, #landing_bckground" data-slide-to="2")
 								.carousel-inner
 									#first.carousel-item.active
-										.landing_bg(style="background-image: url('../Images/landing_1_bg.png')")
+										.landing_bg(style="background-image: url('./images/landing_1_bg.png')")
 										.big_text.t1 8
 										.big_text.t3 O
-										.landing_main(data-depth="0.1")(style="background-image: url('../Images/landing_1_main.png')")
+										.landing_main(data-depth="0.1")(style="background-image: url('./images/landing_1_main.png')")
 									#second.carousel-item
-										.landing_bg(style="background-image: url('../Images/landing_2_bg.png')")
+										.landing_bg(style="background-image: url('./images/landing_2_bg.png')")
 										.big_text.t1 8
 										.big_text.t3 O
-										.landing_main(data-depth="0.1")(style="background-image: url('../Images/landing_2_main.png')")
+										.landing_main(data-depth="0.1")(style="background-image: url('./images/landing_2_main.png')")
 									#third.carousel-item
-										.landing_bg(style="background-image: url('../Images/landing_3_bg.png')")
+										.landing_bg(style="background-image: url('./images/landing_3_bg.png')")
 										.big_text.t1 8
 										.big_text.t3 O
-										.landing_main(data-depth="0.1")(style="background-image: url('../Images/landing_3_main.png')")
+										.landing_main(data-depth="0.1")(style="background-image: url('./images/landing_3_main.png')")
 								//-
 									a.carousel-control-prev(href="[id^=myCarousel]" role="button" data-slide="prev")
 										span.carousel-control-prev-icon(aria-hidden="true")
@@ -53,15 +53,15 @@ block body_content
 							.big_text.t5(data-depth="0.2") E
 							.block_wipe
 				.row
-					.col-8
+					.col-sm-8
 						.landing_info(style="position: relative")
-							a(href="")
-								p Artstation
-							a(href="")
-								p Instergram
-							a(href="")
+							a(href="https://www.pixiv.net/users/4672852", target="_blank")
+								p Pixiv
+							a(href="https://www.plurk.com/shinki1129", target="_blank")
 								p Plurk
-							a(href="")
+							a(href="https://www.instagram.com/8notee/", target="_blank")
+								p Instergram
+							a(href="mailto:z7x2c0v0b8@gmail.com")
 								p z7x2c0v0b8@gmail.com
 							.block_wipe
 			.block_wipe.full
@@ -69,7 +69,7 @@ block body_content
 			.background_right
 			.container-fuild
 				+blockTitle({
-					en: "about",
+					en: "About",
 					tw: "關於"
 				})
 				//-.block_title
@@ -83,24 +83,22 @@ block body_content
 								path(fill="none" stroke="#000000" d="M430.159,121.54c0,0,0,10.246-0.311,14.592c-1.863,93.141-4.036,128.224-12.109,139.089c-5.589,8.693-11.797,11.488-20.179,13.351c-7.763,1.242-18.939,1.553-31.357,1.242c-0.622-10.246-4.347-24.217-9.315-33.221c9.004,0.621,16.765,0.932,21.422,0.932c3.726,0,6.21-1.242,8.693-4.657c4.036-6.21,6.21-30.736,7.452-97.797h-27.941c-4.038,58.057-13.662,105.869-40.362,139.709c-5.899-9.002-17.386-21.731-26.7-27.63c30.426-39.74,32.6-100.902,33.22-179.451h-24.217V53.548h54.643c-4.347-11.487-12.418-26.078-19.87-37.254l32.91-12.42c9.313,12.729,19.559,30.115,23.595,41.603l-19.87,8.071h58.368V87.7h-69.544c0,11.798-0.311,22.664-0.622,33.84H430.159z M534.475,13.499c-2.173,7.45-4.657,14.591-7.45,21.732c15.212,29.805,42.223,60.231,70.165,76.375c-8.693,6.521-20.179,20.181-26.389,29.185c-22.354-15.834-43.466-41.914-59.921-70.167c-15.834,29.496-36.635,53.712-62.713,72.339c-5.277-9.003-16.145-21.732-25.458-29.184c36.015-22.353,63.647-61.473,77.616-109.906L534.475,13.499z M476.728,206.299c28.875,14.591,69.236,38.498,89.416,54.952l-25.771,31.668c-18.005-17.386-57.745-42.844-86.93-59.3L476.728,206.299zM527.025,193.57c-10.867-12.729-34.773-31.668-52.781-45.019l23.596-23.906c18.008,12.109,42.533,29.805,54.643,42.534L527.025,193.57z")
 				.row.justify-content-end
 					.col-sm-7
-						h5 8Note 八音諧
-						.about_info
-							a(href="") Artstation 
-							span / 
-							a(href="") Instergram 
-							span / 
-							a(href="") Plurk 
-							span / 
-							a(href="") E-mail
-						p
-							| 支能不情因許不們，中會快打中司公早發時管蘭連變小早聽沒體一務我絕；師臺力大年分。量的可，看事係去候手報望的斯飛式小見的公其展及生生後朋訴研示……夫意
-							br
-							| * 支能不情因許不們，中會快
-							br
-							| * 聽沒體一務我絕；師臺力大年分。量的可
-							br
-							| * 見的公其展及生生後朋訴研示……夫意為
-						.about_link about Edith Hsu
+						.mobile_outline
+							h5 8Note 八音諧
+							.about_info
+								a(href="https://www.pixiv.net/users/4672852", target="_blank") Pixiv
+								span / 
+								a(href="https://www.plurk.com/shinki1129", target="_blank") Plurk 
+								span / 
+								a(href="https://www.instagram.com/8notee/", target="_blank") Instergram 
+								span / 
+								a(href="mailto:z7x2c0v0b8@gmail.com") z7x2c0v0b8@gmail.com
+							p.pb-5
+								| 不務正業的產品設計師，希望能在工作之餘為自己做些什麼。擅長並沉迷於中世紀奇幻風格，喜歡龍與地下城。
+								br
+								| 但偶爾來點賽博龐克與古風也不錯。
+							button.btn.btn-sm.btn-outline-dark(data-toggle="modal", data-target="#about_award") 過往經歷
+							
 
 		section#project_list
 			.container-fuild
@@ -108,20 +106,22 @@ block body_content
 					en: "Project",
 					tw: "專案"
 				})
-				mixin projectcardItem(column, title, desc, img)
-					.item(class=`${column}`, style=`background-image: url("../Images/${img}")`)
+				mixin projectcardItem(link, column, title, desc, img)
+					a.item(href=`${link}`, class=`${column}`, style=`background-image: url("./images/${img}")`)
 						.adjust_layer
 						.wipe
 						h4.desc= (title)
 						p.desc= (desc)
 				.row.project_card
 					+projectcardItem(
+						'../project_dnd.html',
 						'col-sm-7',
 						'DnD Caracter Collection',
-						'龍與地下城 冒險者收集計劃',
+						'《龍與地下城》冒險者收集計劃',
 						'project_1.png'
 					)
 					+projectcardItem(
+						'../project_adventure.html',
 						'col-sm-3',
 						'Other',
 						'其他',
@@ -129,16 +129,18 @@ block body_content
 					)
 				.row.justify-content-end.project_card.right
 					+projectcardItem(
+						'../project_adventure.html',
 						'col-sm-4 right',
 						'Luciful’s To-Do List',
 						'魔王清單',
-						'work1_2.png'
+						'work2_2.png'
 					)
 					+projectcardItem(
+						'.',
 						'col-sm-6 right',
 						'Yakuza',
 						'極道兄弟',
-						'work1_2.png'
+						'yakuza.png'
 					)
 		section#works
 			.container-fuild
@@ -150,23 +152,33 @@ block body_content
 				.row
 					mixin workCard(style, img, link)
 						a(href=`${link}`, target="_blank")
-							.work_card(class=`${style}`, style=`background-image: url("../Images/${img}")`)
+							.work_card(class=`${style}`, style=`background-image: url("./images/${img}")`)
 						
 					.col-md-4.px-md-1
 						+workCard(
 							'vertical',
-							'work1_1.png',
+							'dnd_cha_2_2.png',
 							'https://www.artstation.com/?sort_by=community'
 						)
 						+workCard(
 							'horizon',
-							'work1_2.png',
+							'work2.png',
+							'https://www.artstation.com/?sort_by=community'
+						)
+						+workCard(
+							'vertical',
+							'dnd_cha_3_1.png',
+							'https://www.artstation.com/?sort_by=community'
+						)
+						+workCard(
+							'horizon',
+							'work4.png',
 							'https://www.artstation.com/?sort_by=community'
 						)
 					.col-md-4.px-md-1
 						+workCard(
 							'horizon',
-							'work2_1.png',
+							'work3.png',
 							'https://www.artstation.com/?sort_by=community'
 						)
 						+workCard(
@@ -174,10 +186,30 @@ block body_content
 							'work2_2.png',
 							'https://www.artstation.com/?sort_by=community'
 						)
+						+workCard(
+							'horizon',
+							'work7.png',
+							'https://www.artstation.com/?sort_by=community'
+						)
+						+workCard(
+							'vertical',
+							'project_1.png',
+							'https://www.artstation.com/?sort_by=community'
+						)
 					.col-md-4.px-md-1
 						+workCard(
 							'vertical',
 							'work3_1.png',
+							'https://www.artstation.com/?sort_by=community'
+						)
+						+workCard(
+							'horizon',
+							'work6.png',
+							'dnd_cha_2_3.png'
+						)
+						+workCard(
+							'vertical',
+							'cyberpunk_3.png',
 							'https://www.artstation.com/?sort_by=community'
 						)
 						+workCard(
@@ -196,8 +228,16 @@ block body_content
 					h4 非商業委託
 					h4(style="margin: 0 50px") |
 					h4 商業委託 (Email)
-				
-
+		
+	.modal.fade#about_award(tabindex="-1", role="dialog", aria-labelledby="about_award", aria-hidden="true")
+		.modal-dialog.modal-dialog-centered(role="document")
+			.modal-content
+				.modal-body
+					p 2017 | comico 第三屆原創漫畫大賞 - 入圍
+					p 2018 | comico 第四屆原創漫畫大賞 - 入圍
+					p 2018 | CLIP STUDIO PAINT Illustration Contest - 3rd place
+					p 2020 | 2020漫畫繁星計畫競賽 自由進階組 - 特優
+					p 2021 | SS × d/art企劃展 東方魅力特展 - 入選
 block body_script
 	script.
 		/*
@@ -205,15 +245,15 @@ block body_script
 			var id = ev.relatedTarget.id;
 			switch (id) {
 				case "first":
-					$( '.big_text' ).css('color','#c3ba8a');
+					$( '.big_text' ).css('color','#d2c5ae');
 					//-$( '.landing_left, .landing_info').css('background','#f0f0f0')
 					break;
 				case "second":
-					$( '.big_text' ).css('color','#ff7907');
+					$( '.big_text' ).css('color','#aecfd2');
 					//-$( '.landing_left, .landing_info').css('background','#f0f0f0')
 					break;
 				case "third":
-					$( '.big_text' ).css('color','#87c0ff');
+					$( '.big_text' ).css('color','#d2aeae');
 					//-$( '.landing_left, .landing_info').css('background','#efd8d8')
 					break;
 				default:
@@ -231,7 +271,7 @@ block body_script
 		var parallax = new Parallax(scene);
 
 
-		//-gsap.to('.block_wipe.full', { width: '0', duration: 1, ease: Power4.easeInOut})
+		gsap.to('.block_wipe.full', { width: '0', duration: 1, ease: Power4.easeInOut})
 		gsap.to('.block_wipe', { width: '0', duration: 1, ease: Power4.easeInOut, delay: 1.6})
 		gsap.to('.text_wipe', { width: '0', duration: 1, ease: Power4.easeInOut, delay: 0.8, stagger: 0.1})
 		

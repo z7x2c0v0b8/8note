@@ -1,13 +1,15 @@
 .navbar.navbar-expand-lg#header
-	a.navbar-brand(href="")
+	a.navbar-brand(href="/")
 		.nav_logo 8Note
-	button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation")
-		span.navbar-toggler-icon
+	.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation")
+		.line
+		.line
+		.line
 	.collapse.navbar-collapse(id="navbarText")
 		ul.navbar-nav.ml-auto
 			li.nav-item.active
-				a.nav-link(href="#about") About
+				a.nav-link(href="./#about") About
 			li.nav-item.active
-				a.nav-link(href="#project") Project
+				a.nav-link(href="./#project_list") Project
 			li.nav-item.active
-				a.nav-link(href="#work") Work
+				a.nav-link(href="./#works") Work

@@ -4,67 +4,101 @@ block body_content
 
 	.page#project
 		section#banner
-			.container-fuild
+			.container-fluid
 				.row
 					+pageTitle({
 						year: '2018 ~',
 						t1: 'DnD',
 						t2: 'Characters',
-						t3: 'Collection'
+						t3: 'Collection',
+						desc: '《龍與地下城》冒險者收集計劃'
 					})
 					.col-3.p-0.left_color
 					.col-9.p-0
 						.landing_banner
+							.mask
 							.banner_pattern.pattern-dots-md
 
 		section#intro
 			.intro_bg
-			.container-fuild
+			.container-fluid
 				.row
-					.col-3
-					.col-9
+					.col-sm-3
+					.col-sm-9
 						p.words
-							| 支能不情因許不們，中會快打中司公早發時管蘭連變小早聽沒體一務我絕；師臺力大年分。量的可，看事係去候手報望的斯飛式小見的公其展及生生後朋訴研示支能不情因許不們，中會快打中司公早發時管蘭連變小早聽沒體一務我絕；師臺力大年分。量的可，看事係去候手報望的斯飛式小見的公其展及生生後朋訴研示支能不情因許不們，中會快打中司公早發時管蘭連變小早聽沒體一務我絕；師臺力大年分。量的可，看事係去候手報望的斯飛式小見的公其展及生生後朋訴研示
+							| 《龍與地下城》( Dungeons & Dragons，簡稱 D&D 或 DnD ），是一款奇幻背景的桌上角色扮演遊戲（ Tabletop Role Playing Game, TRPG ）。根據遊玩的劇本與遊戲規則，遊戲主持人和玩家將扮演其中的角色共同推進故事發展。
+							br
+							| 此計畫將收錄玩家遊玩 DnD 時的冒險者角色，透過玩家在遊戲前撰寫的角色設定，重新詮釋冒險者的視覺設計。
 
 		section#character
-			.container-fuild
+			.container-fluid#character_libery
 				.row
-					.col-2
-					.col-10
-						.main#character_libery
+					.col-sm-2
+					.col-sm-10.p-0
+						.main
 							.list_group
 								.list
-									.list_item(v-on:click="changeItem1", style="background-image: url('../Images/dnd_list_1.png')")
-									.list_item(v-on:click="changeItem2", style="background-image: url('../Images/dnd_list_2.png')")
-									.list_item(v-on:click="changeItem3", style="background-image: url('../Images/dnd_list_3.png')")
-									.list_item(v-on:click="changeItem4")
-								.list(style="margin-left: 60PX")
-									.list_item
-									.list_item
-									.list_item
-									.list_item
-							.character_info
-								.character(:style="{ backgroundImage: 'url(' + image + ')' }")
-								.info
-									p.name_en {{en}}
-									h2.name {{name}}
-									p.type {{type}}
-									.feature
-										.item 個人特質
-										p {{feature}}
-									.feature
-										.item 理念
-										p {{idea}}
-									.feature
-										.item 牽絆
-										p {{bind}}
-									.feature
-										.item 缺點
-										p {{bad}}
-									p.story {{story}}
-									
+									.list_item(data-target="#character_list", data-slide-to="0", class="active", style='background-image: url("./images/dnd_list_2.png")')
+									.list_item(data-target="#character_list", data-slide-to="1", style='background-image: url("./images/dnd_list_5.png")')
+									.list_item(data-target="#character_list", data-slide-to="2", style='background-image: url("./images/dnd_list_4.png")')
+									.list_item(data-target="#character_list", data-slide-to="3", style='background-image: url("./images/dnd_list_3.png")')
+								.list.bottom
+									.list_item(data-target="#character_list", data-slide-to="4", style='background-image: url("./images/dnd_list_1.png")')
+									.list_item(data-target="#character_list", data-slide-to="5", style='background-image: url("./images/dnd_list_6.png")')
+									.list_item.comming
+										p More
+									//-.list_item
+						mixin Character(options)
+							.carousel-item(class=`${options.active}`)
+								.character_info
+									.info
+										p.name_en= (options.enName)
+										h2.name= (options.Name)
+										p.type= (options.type)
+								.character_card(style=`background-image: url('${options.mainImage}')`)
+								.character_img
+									block
+									//- .item.horizon
+									//- .item.vertical
+						.carousel.slide#character_list(data-ride="carousel", data-interval="false")
+							.carousel-inner
+								+Character({active: 'active', Name: '費莎', enName: 'Fischer', type: '玩家：羽入 | 阿斯莫 | 聖騎士', mainImage: './images/dnd_cha_card_2.png'})
+									.item.horizon(style="background-image: url('./images/dnd_cha_2_1.png')")
+									.item.vertical(style="background-image: url('./images/dnd_cha_2_2.png')")
+									//-.item.lg(style="background-image: url('/images/dnd_cha_2_3.png')")
+								+Character({Name: '維德', enName: 'Wade', type: '玩家：阿皮 | 半身人 | 狂戰士', mainImage: './images/dnd_cha_card_5.png'})
+									.item.horizon(style="background-image: url('./images/work3_2.png')")
+									.item.vertical(style="background-image: url('./images/dnd_cha_5_2.png')")
+									//-.item.lg(style="background-image: url('/images/dnd_cha_5_3.png')")
+								+Character({Name: '伊努斯．里埃塔', enName: 'Inus Rieta', type: '玩家：八音諧 | 堤夫林 | 契術師', mainImage: './images/dnd_cha_card_4.png'})
+									.item.horizon(style="background-image: url('./images/dnd_cha_4_1.png')")
+									.item.vertical(style="background-image: url('./images/dnd_cha_4_2.png')")
+									//-.item.lg(style="background-image: url('/images/dnd_cha_4_3.png')")
+								+Character({Name: '菲', enName: 'Feris', type: '玩家：紊紊 | 人類 | 遊俠', mainImage: './images/dnd_cha_card_3.png'})
+									.item.vertical(style="background-image: url('./images/dnd_cha_3_2.png')")
+									.item.horizon(style="background-image: url('./images/dnd_cha_3_4.png')")
+								+Character({Name: '畢夏普．迦蘭諾德', enName: 'Bisharp Galanodel', type: '玩家：八音諧 | 日精靈 | 吟遊詩人', mainImage: './images/dnd_cha_card_1.png'})
+									.item.horizon.w_60(style="background-image: url('./images/dnd_cha_1_1.png')")
+									.item.vertical.w_40(style="background-image: url('./images/dnd_cha_1_2.png')")
+								+Character({Name: '未曦泫露', enName: 'Dripping Dew Afore Dawn', type: '玩家：Eskar | 斑貓人 | 遊俠 (個人委託)', mainImage: './images/dnd_cha_card_6.png'})
+									.item.horizon
+									.item.vertical
 
-										
+						//- .character_info
+						//- 	.info
+						//- 		p.name_en {{en}}
+						//- 		h2.name {{name}}
+						//- 		p.type {{type}}
+						//-.character_card(:style="{ backgroundImage: 'url(' + card + ')' }")
+		section#ad
+			.container-fluid
+				.mask
+				.row.justify-content-center
+					.col-sm-8
+						h3 凡杜林的失落礦坑 團務紀錄創作本
+						p.py-4 記錄著冒險者們在名為凡杜林的城鎮中發生的大小事，收錄約 50 張的設定、插圖外，並節錄文字紀錄輔佐圖像，希望能透過此書帶給大家自己在冒險中所獲得的樂趣與感動！
+						a(href="/book.html")
+							.btn.btn-sm.btn-secondary 詳細資訊
 
 		section#landing_commision
 			.container-fuild
@@ -80,7 +114,7 @@ block body_content
 				
 
 block body_script
-	script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js")
+	//- script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js")
 	script.
 		gsap.to('.text_wipe', { width: '0', duration: 1, ease: Power4.easeInOut, delay: 0.3, stagger: 0.1})
 		
@@ -101,105 +135,75 @@ block body_script
 			.to(section.querySelector('.wipe'),			 { width: '0', duration: 0.4, ease: Power2.easeIn});
 		});
 
-		new Vue({
-			el: '#character_libery',
-			data: {
-				en: 'Bisharp Galanodel',
-				name: '畢夏普．迦蘭諾德',
-				type: '高等精靈(日精靈) / 吟遊詩人 / 混亂善良',
-				feature: '做事俐落而不拖沓。正直，並以此為傲。',
-				idea: '我將憑著自身的智慧扭轉那些命運之下看似已成定局的悲劇。',
-				bind: '任何善待於我的人，我將盡我所能的回報於他。',
-				bad: '固執，易強加自我原則於他人。',
-				story: '出生於精靈故鄉永聚島 ( Evermeet ) 的日精靈',
-				image: '../Images/dnd_cha_1.png',
+	//- 	new Vue({
+	//- 		el: '#character_libery',
+	//- 		data: {
+	//- 			en: 'Fischer',
+	//- 			name: '費莎',
+	//- 			type: '阿斯莫 / 聖騎士 / 混亂善良',
+	//- 			card: '../Images/dnd_cha_card_2.png',
+	//- 			imageL: '../Images/dnd_cha_img1_2.png',
+	//- 			imageR: '../Images/dnd_cha_img2_2.png',
 
-				en1: 'Bisharp Galanodel',
-				name1: '畢夏普．迦蘭諾德',
-				type1: '高等精靈(日精靈) / 吟遊詩人 / 混亂善良',
-				feature1: '做事俐落而不拖沓。正直，並以此為傲。',
-				idea1: '我將憑著自身的智慧扭轉那些命運之下看似已成定局的悲劇。',
-				bind1: '任何善待於我的人，我將盡我所能的回報於他。',
-				bad1: '固執，易強加自我原則於他人。',
-				story1: '出生於精靈故鄉永聚島 ( Evermeet ) 的日精靈',
-				image1: '../Images/dnd_cha_1.png',
+	//- 			en1: 'Bisharp Galanodel',
+	//- 			name1: '畢夏普．迦蘭諾德',
+	//- 			type1: '高等精靈(日精靈) / 吟遊詩人 / 混亂善良',
+	//- 			image1: '../Images/dnd_cha_1.png',
+	//- 			card1: '../Images/dnd_cha_card_1.png',
 
-				en2: 'Fischer',
-				name2: '費莎',
-				type2: '阿斯莫 / 聖騎士 / 混亂善良',
-				feature2: '好惡分明，不過對善良以及邪惡的判斷很主觀，並且表達喜愛和厭惡的方式似乎和常人不太相同。',
-				idea2: '對從未在家鄉看過的一切事物都感到好奇且興奮。',
-				bind2: '認為自由至高、不喜歡受人拘束，因此一直以來都自由選擇想做的事情，也希望他人可以是自由的。',
-				bad2: '本能地無法抗拒新奇事物、聽來有趣的事情或是異國美人。',
-				story2: '出生自距離北地非常遙遠的「索薩爾（Sossal）」。儘管是阿斯莫族的一人，卻和在索薩爾生活的住民們一樣有著光潔的皮膚和雪白的頭髮。一直嚮往著索薩爾之外的世界樣貌，因此小時候就很愛在索薩爾邊境玩只有一個人的探索遊戲。',
-				image2: '../Images/dnd_cha_2.png',
+	//- 			en2: 'Fischer',
+	//- 			name2: '費莎',
+	//- 			type2: '阿斯莫 / 聖騎士 / 混亂善良',
+	//- 			image2: '../Images/dnd_cha_2.png',
+	//- 			card2: '../Images/dnd_cha_card_2.png',
+	//- 			imageL2: '../Images/dnd_cha_img1_2.png',
+	//- 			imageR2: '../Images/dnd_cha_img2_2.png',
 
-				en3: 'Feris',
-				name3: '菲',
-				type3: '人類 / 遊俠 / 中立善良',
-				feature3: '我善於觀察自然，從中我得到能應對任何境況的經驗。',
-				idea3: '大義。部落整體的幸福，是每名成員的義務。',
-				bind3: '撫養幼童繼承部落是我的責任。',
-				bad3: '我不會救那些無法自救者。物競天擇，強者生存。',
-				story3: '我的部落在一座叢林之中，部落中人人都是狩獵好手。14歲那年的成年狩獵儀式我和伙伴一同狩獵到一隻成年野豬，族長將兩隻獠牙分別給了我們作為成年的證明。',
-				image3: '../Images/dnd_cha_3.png',
-			},
-			methods: {
-				changeItem1() {
-					this.en = this.en1;
-					this.name = this.name1;
-					this.type = this.type1;
-					this.feature = this.feature1;
-					this.idea = this.idea1;
-					this.bind = this.bind1;
-					this.bad = this.bad1;
-					this.story = this.story1;
-					this.image = this.image1;
-					return this.en;
-					return this.name;
-					return this.type;
-					return this.feature;
-					return this.idea;
-					return this.bind;
-					return this.bad;
-					return this.story;
-					return this.image;
-				},
-				changeItem2() {
-					this.en = this.en2;
-					this.name = this.name2;
-					this.type = this.type2;
-					this.feature = this.feature2;
-					this.idea = this.idea2;
-					this.bind = this.bind2;
-					this.bad = this.bad2;
-					this.story = this.story2;
-					this.image = this.image2;
-					return this.en;return this.name;return this.type;return this.feature;return this.idea;return this.bind;return this.bad;return this.story;return this.image;
-				},
-				changeItem3() {
-					this.en = this.en3;
-					this.name = this.name3;
-					this.type = this.type3;
-					this.feature = this.feature3;
-					this.idea = this.idea3;
-					this.bind = this.bind3;
-					this.bad = this.bad3;
-					this.story = this.story3;
-					this.image = this.image3;
-					return this.en;return this.name;return this.type;return this.feature;return this.idea;return this.bind;return this.bad;return this.story;return this.image;
-				},
-				changeItem4() {
-					this.en = this.en3;
-					this.name = this.name3;
-					this.type = this.type3;
-					this.feature = this.feature3;
-					this.idea = this.idea3;
-					this.bind = this.bind3;
-					this.bad = this.bad3;
-					this.story = this.story1;
-					this.image = this.image1;
-					return this.en;return this.name;return this.type;return this.feature;return this.idea;return this.bind;return this.bad;return this.story;return this.image;				
-				}
-			}
-		})
+	//- 			en3: 'Feris',
+	//- 			name3: '菲',
+	//- 			type3: '人類 / 遊俠 / 中立善良',
+	//- 			image3: '../Images/dnd_cha_3.png',
+	//- 			card3: '../Images/dnd_cha_card_3.png',
+	//- 			imageL3: '../Images/dnd_cha_img1_3.png',
+	//- 			imageR3: '../Images/dnd_cha_img2_3.png',
+	//- 		},
+	//- 		methods: {
+	//- 			changeItem1() {
+	//- 				this.en = this.en1;
+	//- 				this.name = this.name1;
+	//- 				this.type = this.type1;
+	//- 				this.card = this.card1;
+	//- 				this.imageL = this.imageL1;
+	//- 				this.imageR = this.imageR1;
+	//- 				return this.en;
+	//- 				return this.name;
+	//- 				return this.type;
+	//- 				return this.card;
+	//- 				return this.imageL;
+	//- 				return this.imageR;
+	//- 			},
+	//- 			changeItem2() {
+	//- 				this.en = this.en2;
+	//- 				this.name = this.name2;
+	//- 				this.type = this.type2;
+	//- 				this.card = this.card2;
+	//- 				this.imageL = this.imageL2;
+	//- 				this.imageR = this.imageR2;
+	//- 				return this.en;return this.name;return this.type;return this.image;return this.card;
+	//- 				return this.imageL;
+	//- 				return this.imageR;
+	//- 			},
+	//- 			changeItem3() {
+	//- 				this.en = this.en3;
+	//- 				this.name = this.name3;
+	//- 				this.type = this.type3;
+	//- 				this.image = this.image3;
+	//- 				this.card = this.card3;
+	//- 				this.imageL = this.imageL3;
+	//- 				this.imageR = this.imageR3;
+	//- 				return this.en;return this.name;return this.type;return this.image;return this.card;
+	//- 				return this.imageL;
+	//- 				return this.imageR;
+	//- 			}
+	//- 		}
+	//- 	})

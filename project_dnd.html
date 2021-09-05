@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="language" content="zh_TW"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
-    <link rel="icon" type="/image/x-icon" href="./Images/favicon.png"/>
+    <link rel="icon" type="/image/x-icon" href="./images/favicon.png"/>
     <link rel="shortcut icon" href="./images/book/favicon.png"/>
-    <title>八音諧 8Note | 龍與地下城 - 凡杜林的失落礦坑 團務紀錄創作本</title>
+    <title>8Note Portfolio Collection</title>
     <meta property="fb:app_id" content="..."/>
     <meta property="og:locale" content="zh_TW"/>
     <meta property="og:type" content="website"/>
     <link rel="canonical" href="..."/>
     <meta property="og:url" content="https://z7x2c0v0b8.github.io/8note/book.html"/>
-    <meta property="og:title" content="八音諧 8Note | 龍與地下城 - 凡杜林的失落礦坑 團務紀錄創作本"/>
-    <meta property="og:description" content="龍與地下城 - 凡杜林的失落礦坑 團務紀錄創作本"/>
+    <meta property="og:title" content="8Note Portfolio Collection"/>
+    <meta property="og:description" content="8Note Portfolio Collection"/>
     <meta property="og:image" content="https://i.imgur.com/thHgDUo.png"/>
     <meta property="og:image:height" content="300"/>
     <meta property="og:image:width" content="400"/>
@@ -30,7 +30,7 @@
     <div class="body_outline">
       <div class="page" id="project">
         <section id="banner">
-          <div class="container-fuild">
+          <div class="container-fluid">
             <div class="row">
                   <div class="pagetitle">
                     <div class="text_outline">
@@ -47,11 +47,13 @@
                         <h1 class="mix_blend m-0">Collection</h1>
                         <div class="text_wipe"></div>
                       </div>
+                      <p>《龍與地下城》冒險者收集計劃</p>
                     </div>
                   </div>
               <div class="col-3 p-0 left_color"></div>
               <div class="col-9 p-0">
                 <div class="landing_banner">
+                  <div class="mask"></div>
                   <div class="banner_pattern pattern-dots-md"></div>
                 </div>
               </div>
@@ -60,61 +62,137 @@
         </section>
         <section id="intro">
           <div class="intro_bg"></div>
-          <div class="container-fuild">
+          <div class="container-fluid">
             <div class="row">
-              <div class="col-3"></div>
-              <div class="col-9">
-                <p class="words">支能不情因許不們，中會快打中司公早發時管蘭連變小早聽沒體一務我絕；師臺力大年分。量的可，看事係去候手報望的斯飛式小見的公其展及生生後朋訴研示支能不情因許不們，中會快打中司公早發時管蘭連變小早聽沒體一務我絕；師臺力大年分。量的可，看事係去候手報望的斯飛式小見的公其展及生生後朋訴研示支能不情因許不們，中會快打中司公早發時管蘭連變小早聽沒體一務我絕；師臺力大年分。量的可，看事係去候手報望的斯飛式小見的公其展及生生後朋訴研示</p>
+              <div class="col-sm-3"></div>
+              <div class="col-sm-9">
+                <p class="words">《龍與地下城》( Dungeons & Dragons，簡稱 D&D 或 DnD ），是一款奇幻背景的桌上角色扮演遊戲（ Tabletop Role Playing Game, TRPG ）。根據遊玩的劇本與遊戲規則，遊戲主持人和玩家將扮演其中的角色共同推進故事發展。<br/>此計畫將收錄玩家遊玩 DnD 時的冒險者角色，透過玩家在遊戲前撰寫的角色設定，重新詮釋冒險者的視覺設計。</p>
               </div>
             </div>
           </div>
         </section>
         <section id="character">
-          <div class="container-fuild">
+          <div class="container-fluid" id="character_libery">
             <div class="row">
-              <div class="col-2"></div>
-              <div class="col-10">
-                <div class="main" id="character_libery">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-10 p-0">
+                <div class="main">
                   <div class="list_group">
                     <div class="list">
-                      <div class="list_item" v-on:click="changeItem1" style="background-image: url('../Images/dnd_list_1.png')"></div>
-                      <div class="list_item" v-on:click="changeItem2" style="background-image: url('../Images/dnd_list_2.png')"></div>
-                      <div class="list_item" v-on:click="changeItem3" style="background-image: url('../Images/dnd_list_3.png')"></div>
-                      <div class="list_item" v-on:click="changeItem4"></div>
+                      <div class="list_item active" data-target="#character_list" data-slide-to="0" style="background-image: url(&quot;./images/dnd_list_2.png&quot;)"></div>
+                      <div class="list_item" data-target="#character_list" data-slide-to="1" style="background-image: url(&quot;./images/dnd_list_5.png&quot;)"></div>
+                      <div class="list_item" data-target="#character_list" data-slide-to="2" style="background-image: url(&quot;./images/dnd_list_4.png&quot;)"></div>
+                      <div class="list_item" data-target="#character_list" data-slide-to="3" style="background-image: url(&quot;./images/dnd_list_3.png&quot;)"></div>
                     </div>
-                    <div class="list" style="margin-left: 60PX">
-                      <div class="list_item"></div>
-                      <div class="list_item"></div>
-                      <div class="list_item"></div>
-                      <div class="list_item"></div>
-                    </div>
-                  </div>
-                  <div class="character_info">
-                    <div class="character" :style="{ backgroundImage: 'url(' + image + ')' }"></div>
-                    <div class="info">
-                      <p class="name_en">{{en}}</p>
-                      <h2 class="name">{{name}}</h2>
-                      <p class="type">{{type}}</p>
-                      <div class="feature">
-                        <div class="item">個人特質</div>
-                        <p>{{feature}}</p>
+                    <div class="list bottom">
+                      <div class="list_item" data-target="#character_list" data-slide-to="4" style="background-image: url(&quot;./images/dnd_list_1.png&quot;)"></div>
+                      <div class="list_item" data-target="#character_list" data-slide-to="5" style="background-image: url(&quot;./images/dnd_list_6.png&quot;)"></div>
+                      <div class="list_item comming">
+                        <p>More</p>
                       </div>
-                      <div class="feature">
-                        <div class="item">理念</div>
-                        <p>{{idea}}</p>
-                      </div>
-                      <div class="feature">
-                        <div class="item">牽絆</div>
-                        <p>{{bind}}</p>
-                      </div>
-                      <div class="feature">
-                        <div class="item">缺點</div>
-                        <p>{{bad}}</p>
-                      </div>
-                      <p class="story">{{story}}</p>
                     </div>
                   </div>
                 </div>
+                <div class="carousel slide" id="character_list" data-ride="carousel" data-interval="false">
+                  <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                      <div class="character_info">
+                                        <div class="info">
+                                          <p class="name_en">Fischer</p>
+                                          <h2 class="name">費莎</h2>
+                                          <p class="type">玩家：羽入 | 阿斯莫 | 聖騎士</p>
+                                        </div>
+                                      </div>
+                                      <div class="character_card" style="background-image: url('./images/dnd_cha_card_2.png')"></div>
+                                      <div class="character_img">
+                                        <div class="item horizon" style="background-image: url('./images/dnd_cha_2_1.png')"></div>
+                                        <div class="item vertical" style="background-image: url('./images/dnd_cha_2_2.png')"></div>
+                                      </div>
+                                    </div>
+                                    <div class="carousel-item undefined">
+                                      <div class="character_info">
+                                        <div class="info">
+                                          <p class="name_en">Wade</p>
+                                          <h2 class="name">維德</h2>
+                                          <p class="type">玩家：阿皮 | 半身人 | 狂戰士</p>
+                                        </div>
+                                      </div>
+                                      <div class="character_card" style="background-image: url('./images/dnd_cha_card_5.png')"></div>
+                                      <div class="character_img">
+                                        <div class="item horizon" style="background-image: url('./images/work3_2.png')"></div>
+                                        <div class="item vertical" style="background-image: url('./images/dnd_cha_5_2.png')"></div>
+                                      </div>
+                                    </div>
+                                    <div class="carousel-item undefined">
+                                      <div class="character_info">
+                                        <div class="info">
+                                          <p class="name_en">Inus Rieta</p>
+                                          <h2 class="name">伊努斯．里埃塔</h2>
+                                          <p class="type">玩家：八音諧 | 堤夫林 | 契術師</p>
+                                        </div>
+                                      </div>
+                                      <div class="character_card" style="background-image: url('./images/dnd_cha_card_4.png')"></div>
+                                      <div class="character_img">
+                                        <div class="item horizon" style="background-image: url('./images/dnd_cha_4_1.png')"></div>
+                                        <div class="item vertical" style="background-image: url('./images/dnd_cha_4_2.png')"></div>
+                                      </div>
+                                    </div>
+                                    <div class="carousel-item undefined">
+                                      <div class="character_info">
+                                        <div class="info">
+                                          <p class="name_en">Feris</p>
+                                          <h2 class="name">菲</h2>
+                                          <p class="type">玩家：紊紊 | 人類 | 遊俠</p>
+                                        </div>
+                                      </div>
+                                      <div class="character_card" style="background-image: url('./images/dnd_cha_card_3.png')"></div>
+                                      <div class="character_img">
+                                        <div class="item vertical" style="background-image: url('./images/dnd_cha_3_2.png')"></div>
+                                        <div class="item horizon" style="background-image: url('./images/dnd_cha_3_4.png')"></div>
+                                      </div>
+                                    </div>
+                                    <div class="carousel-item undefined">
+                                      <div class="character_info">
+                                        <div class="info">
+                                          <p class="name_en">Bisharp Galanodel</p>
+                                          <h2 class="name">畢夏普．迦蘭諾德</h2>
+                                          <p class="type">玩家：八音諧 | 日精靈 | 吟遊詩人</p>
+                                        </div>
+                                      </div>
+                                      <div class="character_card" style="background-image: url('./images/dnd_cha_card_1.png')"></div>
+                                      <div class="character_img">
+                                        <div class="item horizon w_60" style="background-image: url('./images/dnd_cha_1_1.png')"></div>
+                                        <div class="item vertical w_40" style="background-image: url('./images/dnd_cha_1_2.png')"></div>
+                                      </div>
+                                    </div>
+                                    <div class="carousel-item undefined">
+                                      <div class="character_info">
+                                        <div class="info">
+                                          <p class="name_en">Dripping Dew Afore Dawn</p>
+                                          <h2 class="name">未曦泫露</h2>
+                                          <p class="type">玩家：Eskar | 斑貓人 | 遊俠 (個人委託)</p>
+                                        </div>
+                                      </div>
+                                      <div class="character_card" style="background-image: url('./images/dnd_cha_card_6.png')"></div>
+                                      <div class="character_img">
+                                        <div class="item horizon"></div>
+                                        <div class="item vertical"></div>
+                                      </div>
+                                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="ad">
+          <div class="container-fluid">
+            <div class="mask"></div>
+            <div class="row justify-content-center">
+              <div class="col-sm-8">
+                <h3>凡杜林的失落礦坑 團務紀錄創作本</h3>
+                <p class="py-4">記錄著冒險者們在名為凡杜林的城鎮中發生的大小事，收錄約 50 張的設定、插圖外，並節錄文字紀錄輔佐圖像，希望能透過此書帶給大家自己在冒險中所獲得的樂趣與感動！</p><a href="/book.html">
+                  <div class="btn btn-sm btn-secondary">詳細資訊</div></a>
               </div>
             </div>
           </div>
@@ -137,14 +215,18 @@
         </section>
       </div>
     </div>
-    <div class="navbar navbar-expand-lg" id="header"><a class="navbar-brand" href="">
+    <div class="navbar navbar-expand-lg" id="header"><a class="navbar-brand" href="/">
         <div class="nav_logo">8Note</div></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item active"><a class="nav-link" href="#project">Project</a></li>
-          <li class="nav-item active"><a class="nav-link" href="#work">Work</a></li>
+          <li class="nav-item active"><a class="nav-link" href="./#about">About</a></li>
+          <li class="nav-item active"><a class="nav-link" href="./#project_list">Project</a></li>
+          <li class="nav-item active"><a class="nav-link" href="./#works">Work</a></li>
         </ul>
       </div>
     </div>
@@ -153,7 +235,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
     <script>
       gsap.to('.text_wipe', { width: '0', duration: 1, ease: Power4.easeInOut, delay: 0.3, stagger: 0.1})
       
@@ -174,108 +255,6 @@
       	.to(section.querySelector('.wipe'),			 { width: '0', duration: 0.4, ease: Power2.easeIn});
       });
       
-      new Vue({
-      	el: '#character_libery',
-      	data: {
-      		en: 'Bisharp Galanodel',
-      		name: '畢夏普．迦蘭諾德',
-      		type: '高等精靈(日精靈) / 吟遊詩人 / 混亂善良',
-      		feature: '做事俐落而不拖沓。正直，並以此為傲。',
-      		idea: '我將憑著自身的智慧扭轉那些命運之下看似已成定局的悲劇。',
-      		bind: '任何善待於我的人，我將盡我所能的回報於他。',
-      		bad: '固執，易強加自我原則於他人。',
-      		story: '出生於精靈故鄉永聚島 ( Evermeet ) 的日精靈',
-      		image: '../Images/dnd_cha_1.png',
-      
-      		en1: 'Bisharp Galanodel',
-      		name1: '畢夏普．迦蘭諾德',
-      		type1: '高等精靈(日精靈) / 吟遊詩人 / 混亂善良',
-      		feature1: '做事俐落而不拖沓。正直，並以此為傲。',
-      		idea1: '我將憑著自身的智慧扭轉那些命運之下看似已成定局的悲劇。',
-      		bind1: '任何善待於我的人，我將盡我所能的回報於他。',
-      		bad1: '固執，易強加自我原則於他人。',
-      		story1: '出生於精靈故鄉永聚島 ( Evermeet ) 的日精靈',
-      		image1: '../Images/dnd_cha_1.png',
-      
-      		en2: 'Fischer',
-      		name2: '費莎',
-      		type2: '阿斯莫 / 聖騎士 / 混亂善良',
-      		feature2: '好惡分明，不過對善良以及邪惡的判斷很主觀，並且表達喜愛和厭惡的方式似乎和常人不太相同。',
-      		idea2: '對從未在家鄉看過的一切事物都感到好奇且興奮。',
-      		bind2: '認為自由至高、不喜歡受人拘束，因此一直以來都自由選擇想做的事情，也希望他人可以是自由的。',
-      		bad2: '本能地無法抗拒新奇事物、聽來有趣的事情或是異國美人。',
-      		story2: '出生自距離北地非常遙遠的「索薩爾（Sossal）」。儘管是阿斯莫族的一人，卻和在索薩爾生活的住民們一樣有著光潔的皮膚和雪白的頭髮。一直嚮往著索薩爾之外的世界樣貌，因此小時候就很愛在索薩爾邊境玩只有一個人的探索遊戲。',
-      		image2: '../Images/dnd_cha_2.png',
-      
-      		en3: 'Feris',
-      		name3: '菲',
-      		type3: '人類 / 遊俠 / 中立善良',
-      		feature3: '我善於觀察自然，從中我得到能應對任何境況的經驗。',
-      		idea3: '大義。部落整體的幸福，是每名成員的義務。',
-      		bind3: '撫養幼童繼承部落是我的責任。',
-      		bad3: '我不會救那些無法自救者。物競天擇，強者生存。',
-      		story3: '我的部落在一座叢林之中，部落中人人都是狩獵好手。14歲那年的成年狩獵儀式我和伙伴一同狩獵到一隻成年野豬，族長將兩隻獠牙分別給了我們作為成年的證明。',
-      		image3: '../Images/dnd_cha_3.png',
-      	},
-      	methods: {
-      		changeItem1() {
-      			this.en = this.en1;
-      			this.name = this.name1;
-      			this.type = this.type1;
-      			this.feature = this.feature1;
-      			this.idea = this.idea1;
-      			this.bind = this.bind1;
-      			this.bad = this.bad1;
-      			this.story = this.story1;
-      			this.image = this.image1;
-      			return this.en;
-      			return this.name;
-      			return this.type;
-      			return this.feature;
-      			return this.idea;
-      			return this.bind;
-      			return this.bad;
-      			return this.story;
-      			return this.image;
-      		},
-      		changeItem2() {
-      			this.en = this.en2;
-      			this.name = this.name2;
-      			this.type = this.type2;
-      			this.feature = this.feature2;
-      			this.idea = this.idea2;
-      			this.bind = this.bind2;
-      			this.bad = this.bad2;
-      			this.story = this.story2;
-      			this.image = this.image2;
-      			return this.en;return this.name;return this.type;return this.feature;return this.idea;return this.bind;return this.bad;return this.story;return this.image;
-      		},
-      		changeItem3() {
-      			this.en = this.en3;
-      			this.name = this.name3;
-      			this.type = this.type3;
-      			this.feature = this.feature3;
-      			this.idea = this.idea3;
-      			this.bind = this.bind3;
-      			this.bad = this.bad3;
-      			this.story = this.story3;
-      			this.image = this.image3;
-      			return this.en;return this.name;return this.type;return this.feature;return this.idea;return this.bind;return this.bad;return this.story;return this.image;
-      		},
-      		changeItem4() {
-      			this.en = this.en3;
-      			this.name = this.name3;
-      			this.type = this.type3;
-      			this.feature = this.feature3;
-      			this.idea = this.idea3;
-      			this.bind = this.bind3;
-      			this.bad = this.bad3;
-      			this.story = this.story1;
-      			this.image = this.image1;
-      			return this.en;return this.name;return this.type;return this.feature;return this.idea;return this.bind;return this.bad;return this.story;return this.image;				
-      		}
-      	}
-      })
     </script>
   </body>
 </html>
