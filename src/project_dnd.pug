@@ -49,7 +49,7 @@ block body_content
 										p More
 									//-.list_item
 						mixin Character(options)
-							.carousel-item(class=`${options.active}`)
+							a.carousel-item(href=`${options.link}`, class=`${options.active}`, target="_blank")
 								.character_info
 									.info
 										p.name_en= (options.enName)
@@ -62,19 +62,19 @@ block body_content
 									//- .item.vertical
 						.carousel.slide#character_list(data-ride="carousel", data-interval="false")
 							.carousel-inner
-								+Character({active: 'active', Name: '費莎', enName: 'Fischer', type: '玩家：羽入 | 阿斯莫 | 聖騎士', mainImage: './images/dnd_cha_card_2.png'})
+								+Character({active: 'active', Name: '費莎', enName: 'Fischer', type: '玩家：羽入 | 阿斯莫 | 聖騎士', mainImage: './images/dnd_cha_card_2.png', link: 'https://www.pixiv.net/artworks/89222570'})
 									.item.horizon(style="background-image: url('./images/dnd_cha_2_1.png')")
 									.item.vertical(style="background-image: url('./images/dnd_cha_2_2.png')")
 									//-.item.lg(style="background-image: url('/images/dnd_cha_2_3.png')")
-								+Character({Name: '維德', enName: 'Wade', type: '玩家：阿皮 | 半身人 | 狂戰士', mainImage: './images/dnd_cha_card_5.png'})
+								+Character({Name: '維德', enName: 'Wade', type: '玩家：阿皮 | 半身人 | 狂戰士', mainImage: './images/dnd_cha_card_5.png', link: 'https://www.pixiv.net/artworks/89395919'})
 									.item.horizon(style="background-image: url('./images/work3_2.png')")
 									.item.vertical(style="background-image: url('./images/dnd_cha_5_2.png')")
 									//-.item.lg(style="background-image: url('/images/dnd_cha_5_3.png')")
-								+Character({Name: '伊努斯．里埃塔', enName: 'Inus Rieta', type: '玩家：八音諧 | 堤夫林 | 契術師', mainImage: './images/dnd_cha_card_4.png'})
+								+Character({Name: '伊努斯．里埃塔', enName: 'Inus Rieta', type: '玩家：八音諧 | 堤夫林 | 契術師', mainImage: './images/dnd_cha_card_4.png', link: 'https://www.pixiv.net/artworks/89437181'})
 									.item.horizon(style="background-image: url('./images/dnd_cha_4_1.png')")
 									.item.vertical(style="background-image: url('./images/dnd_cha_4_2.png')")
 									//-.item.lg(style="background-image: url('/images/dnd_cha_4_3.png')")
-								+Character({Name: '菲', enName: 'Feris', type: '玩家：紊紊 | 人類 | 遊俠', mainImage: './images/dnd_cha_card_3.png'})
+								+Character({Name: '菲', enName: 'Feris', type: '玩家：紊紊 | 人類 | 遊俠', mainImage: './images/dnd_cha_card_3.png', link: 'https://www.pixiv.net/artworks/89396017'})
 									.item.vertical(style="background-image: url('./images/dnd_cha_3_2.png')")
 									.item.horizon(style="background-image: url('./images/dnd_cha_3_4.png')")
 								+Character({Name: '畢夏普．迦蘭諾德', enName: 'Bisharp Galanodel', type: '玩家：八音諧 | 日精靈 | 吟遊詩人', mainImage: './images/dnd_cha_card_1.png'})
