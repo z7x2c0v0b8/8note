@@ -149,7 +149,7 @@ body, html {
       text-align: right; }
     #header .navbar-nav a.nav-link {
       color: #c3c3c3; }
-  #header .navbar-toggler .line {
+  #header .navbar_toggler .line {
     width: 25px;
     height: 1px;
     background-color: #fff;
@@ -323,6 +323,8 @@ body, html {
     padding-left: 30px; }
   #index #project_list {
     background: #f1f1f1; }
+    #index #project_list .block_title .wipe_outline {
+      left: 242px; }
     #index #project_list .project_card {
       margin: 0; }
       #index #project_list .project_card .item {
@@ -734,7 +736,10 @@ body, html {
       #project #character #character_libery .carousel-item .character_img .item.horizon.w_60, #project_luciful #character #character_libery .carousel-item .character_img .item.horizon.w_60 {
         width: 100%; }
       #project #character #character_libery .carousel-item .character_img .item.vertical.w_40, #project_luciful #character #character_libery .carousel-item .character_img .item.vertical.w_40 {
-        width: 100%; } }
+        width: 100%; }
+  #project #ad, #project_luciful #ad {
+    padding-right: 15px;
+    padding-left: 15px; } }
 
 #project_luciful #banner .landing_banner {
   background-image: url("./images/work2_2.png");
