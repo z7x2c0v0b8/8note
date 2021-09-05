@@ -323,7 +323,7 @@ body, html {
     padding-left: 30px; }
   #index #project_list {
     background: #f1f1f1; }
-    #index #project_list .block_title .wipe_outline {
+    #index #project_list .block_title .wipe_outline h2 {
       left: 242px; }
     #index #project_list .project_card {
       margin: 0; }
