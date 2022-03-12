@@ -1146,3 +1146,11 @@ body, html {
       z-index: 99; }
     #book #opening .character_right.bottom.mask {
       display: none; } }
+
+#comic .animate {
+  width: 100%; }
+
+#comic .block {
+  width: 100%;
+  height: 50vh;
+  background-color: #000; }
